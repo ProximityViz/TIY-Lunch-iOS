@@ -7,12 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		EC1808941A795DE100658D67 /* libMapbox.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EC1808921A795DE100658D67 /* libMapbox.a */; };
+		EC1808951A795DE100658D67 /* Mapbox.bundle in Resources */ = {isa = PBXBuildFile; fileRef = EC1808931A795DE100658D67 /* Mapbox.bundle */; };
+		EC1808981A795E9700658D67 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = EC1808961A795E9700658D67 /* libsqlite3.dylib */; };
+		EC1808991A795E9700658D67 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = EC1808971A795E9700658D67 /* libz.dylib */; };
 		EC825AB01A7683330042FF88 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC825AAF1A7683330042FF88 /* AppDelegate.swift */; };
-		EC825AB21A7683330042FF88 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC825AB11A7683330042FF88 /* ViewController.swift */; };
 		EC825AB51A7683330042FF88 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EC825AB31A7683330042FF88 /* Main.storyboard */; };
 		EC825AB71A7683330042FF88 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EC825AB61A7683330042FF88 /* Images.xcassets */; };
 		EC825ABA1A7683340042FF88 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = EC825AB81A7683340042FF88 /* LaunchScreen.xib */; };
 		EC825AC61A7683340042FF88 /* TIY_LunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC825AC51A7683340042FF88 /* TIY_LunchTests.swift */; };
+		EC825AD01A7683440042FF88 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC825ACF1A7683440042FF88 /* CoreLocation.framework */; };
+		EC825AD21A7683490042FF88 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC825AD11A7683490042FF88 /* MapKit.framework */; };
+		EC825AD51A7683F20042FF88 /* MainMapVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC825AD41A7683F20042FF88 /* MainMapVC.swift */; };
+		EC825AD71A7684A80042FF88 /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC825AD61A7684A80042FF88 /* Data.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -26,16 +33,80 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		EC18085A1A795DE100658D67 /* Mapbox.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Mapbox.h; sourceTree = "<group>"; };
+		EC18085B1A795DE100658D67 /* RMAbstractMercatorTileSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RMAbstractMercatorTileSource.h; sourceTree = "<group>"; };
+		EC18085C1A795DE100658D67 /* RMAbstractWebMapSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RMAbstractWebMapSource.h; sourceTree = "<group>"; };
+		EC18085D1A795DE100658D67 /* RMAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RMAnnotation.h; sourceTree = "<group>"; };
+		EC18085E1A795DE100658D67 /* RMAttributionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RMAttributionViewController.h; sourceTree = "<group>"; };
+		EC18085F1A795DE100658D67 /* RMBingSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RMBingSource.h; sourceTree = "<group>"; };
+		EC1808601A795DE100658D67 /* RMCacheObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RMCacheObject.h; sourceTree = "<group>"; };
+		EC1808611A795DE100658D67 /* RMCircle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RMCircle.h; sourceTree = "<group>"; };
+		EC1808621A795DE100658D67 /* RMCircleAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RMCircleAnnotation.h; sourceTree = "<group>"; };
+		EC1808631A795DE100658D67 /* RMCompositeSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RMCompositeSource.h; sourceTree = "<group>"; };
+		EC1808641A795DE100658D67 /* RMConfiguration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RMConfiguration.h; sourceTree = "<group>"; };
+		EC1808651A795DE100658D67 /* RMCoordinateGridSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RMCoordinateGridSource.h; sourceTree = "<group>"; };
+		EC1808661A795DE100658D67 /* RMDatabaseCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RMDatabaseCache.h; sourceTree = "<group>"; };
+		EC1808671A795DE100658D67 /* RMDBMapSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RMDBMapSource.h; sourceTree = "<group>"; };
+		EC1808681A795DE100658D67 /* RMFoundation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RMFoundation.h; sourceTree = "<group>"; };
+		EC1808691A795DE100658D67 /* RMFractalTileProjection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RMFractalTileProjection.h; sourceTree = "<group>"; };
+		EC18086A1A795DE100658D67 /* RMGenericMapSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RMGenericMapSource.h; sourceTree = "<group>"; };
+		EC18086B1A795DE100658D67 /* RMGlobalConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RMGlobalConstants.h; sourceTree = "<group>"; };
+		EC18086C1A795DE100658D67 /* RMGreatCircleAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RMGreatCircleAnnotation.h; sourceTree = "<group>"; };
+		EC18086D1A795DE100658D67 /* RMInteractiveSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RMInteractiveSource.h; sourceTree = "<group>"; };
+		EC18086E1A795DE100658D67 /* RMLoadingTileView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RMLoadingTileView.h; sourceTree = "<group>"; };
+		EC18086F1A795DE100658D67 /* RMMapboxSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RMMapboxSource.h; sourceTree = "<group>"; };
+		EC1808701A795DE100658D67 /* RMMapLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RMMapLayer.h; sourceTree = "<group>"; };
+		EC1808711A795DE100658D67 /* RMMapOverlayView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RMMapOverlayView.h; sourceTree = "<group>"; };
+		EC1808721A795DE100658D67 /* RMMapQuestOpenAerialSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RMMapQuestOpenAerialSource.h; sourceTree = "<group>"; };
+		EC1808731A795DE100658D67 /* RMMapQuestOSMSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RMMapQuestOSMSource.h; sourceTree = "<group>"; };
+		EC1808741A795DE100658D67 /* RMMapScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RMMapScrollView.h; sourceTree = "<group>"; };
+		EC1808751A795DE100658D67 /* RMMapTiledLayerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RMMapTiledLayerView.h; sourceTree = "<group>"; };
+		EC1808761A795DE100658D67 /* RMMapView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RMMapView.h; sourceTree = "<group>"; };
+		EC1808771A795DE100658D67 /* RMMapViewDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RMMapViewDelegate.h; sourceTree = "<group>"; };
+		EC1808781A795DE100658D67 /* RMMarker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RMMarker.h; sourceTree = "<group>"; };
+		EC1808791A795DE100658D67 /* RMMBTilesSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RMMBTilesSource.h; sourceTree = "<group>"; };
+		EC18087A1A795DE100658D67 /* RMMemoryCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RMMemoryCache.h; sourceTree = "<group>"; };
+		EC18087B1A795DE100658D67 /* RMNotifications.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RMNotifications.h; sourceTree = "<group>"; };
+		EC18087C1A795DE100658D67 /* RMOpenCycleMapSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RMOpenCycleMapSource.h; sourceTree = "<group>"; };
+		EC18087D1A795DE100658D67 /* RMOpenSeaMapLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RMOpenSeaMapLayer.h; sourceTree = "<group>"; };
+		EC18087E1A795DE100658D67 /* RMOpenSeaMapSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RMOpenSeaMapSource.h; sourceTree = "<group>"; };
+		EC18087F1A795DE100658D67 /* RMOpenStreetMapSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RMOpenStreetMapSource.h; sourceTree = "<group>"; };
+		EC1808801A795DE100658D67 /* RMPixel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RMPixel.h; sourceTree = "<group>"; };
+		EC1808811A795DE100658D67 /* RMPointAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RMPointAnnotation.h; sourceTree = "<group>"; };
+		EC1808821A795DE100658D67 /* RMPolygonAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RMPolygonAnnotation.h; sourceTree = "<group>"; };
+		EC1808831A795DE100658D67 /* RMPolylineAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RMPolylineAnnotation.h; sourceTree = "<group>"; };
+		EC1808841A795DE100658D67 /* RMProjection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RMProjection.h; sourceTree = "<group>"; };
+		EC1808851A795DE100658D67 /* RMQuadTree.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RMQuadTree.h; sourceTree = "<group>"; };
+		EC1808861A795DE100658D67 /* RMShape.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RMShape.h; sourceTree = "<group>"; };
+		EC1808871A795DE100658D67 /* RMShapeAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RMShapeAnnotation.h; sourceTree = "<group>"; };
+		EC1808881A795DE100658D67 /* RMStaticMapView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RMStaticMapView.h; sourceTree = "<group>"; };
+		EC1808891A795DE100658D67 /* RMTile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RMTile.h; sourceTree = "<group>"; };
+		EC18088A1A795DE100658D67 /* RMTileCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RMTileCache.h; sourceTree = "<group>"; };
+		EC18088B1A795DE100658D67 /* RMTileCacheDownloadOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RMTileCacheDownloadOperation.h; sourceTree = "<group>"; };
+		EC18088C1A795DE100658D67 /* RMTileImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RMTileImage.h; sourceTree = "<group>"; };
+		EC18088D1A795DE100658D67 /* RMTileMillSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RMTileMillSource.h; sourceTree = "<group>"; };
+		EC18088E1A795DE100658D67 /* RMTileSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RMTileSource.h; sourceTree = "<group>"; };
+		EC18088F1A795DE100658D67 /* RMTileSourcesContainer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RMTileSourcesContainer.h; sourceTree = "<group>"; };
+		EC1808901A795DE100658D67 /* RMUserLocation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RMUserLocation.h; sourceTree = "<group>"; };
+		EC1808911A795DE100658D67 /* RMUserTrackingBarButtonItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RMUserTrackingBarButtonItem.h; sourceTree = "<group>"; };
+		EC1808921A795DE100658D67 /* libMapbox.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libMapbox.a; sourceTree = "<group>"; };
+		EC1808931A795DE100658D67 /* Mapbox.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Mapbox.bundle; sourceTree = "<group>"; };
+		EC1808961A795E9700658D67 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
+		EC1808971A795E9700658D67 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
+		EC18089A1A795EBE00658D67 /* TIY Lunch-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TIY Lunch-Bridging-Header.h"; sourceTree = SOURCE_ROOT; };
 		EC825AAA1A7683330042FF88 /* TIY Lunch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "TIY Lunch.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EC825AAE1A7683330042FF88 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EC825AAF1A7683330042FF88 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		EC825AB11A7683330042FF88 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		EC825AB41A7683330042FF88 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		EC825AB61A7683330042FF88 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		EC825AB91A7683340042FF88 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		EC825ABF1A7683340042FF88 /* TIY LunchTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "TIY LunchTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EC825AC41A7683340042FF88 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EC825AC51A7683340042FF88 /* TIY_LunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TIY_LunchTests.swift; sourceTree = "<group>"; };
+		EC825ACF1A7683440042FF88 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		EC825AD11A7683490042FF88 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		EC825AD41A7683F20042FF88 /* MainMapVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainMapVC.swift; sourceTree = "<group>"; };
+		EC825AD61A7684A80042FF88 /* Data.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,6 +114,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EC1808981A795E9700658D67 /* libsqlite3.dylib in Frameworks */,
+				EC1808991A795E9700658D67 /* libz.dylib in Frameworks */,
+				EC1808941A795DE100658D67 /* libMapbox.a in Frameworks */,
+				EC825AD21A7683490042FF88 /* MapKit.framework in Frameworks */,
+				EC825AD01A7683440042FF88 /* CoreLocation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -56,12 +132,86 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		EC1808581A795DE100658D67 /* Mapbox-iOS-SDK-1.5.0 */ = {
+			isa = PBXGroup;
+			children = (
+				EC1808591A795DE100658D67 /* Headers */,
+				EC1808921A795DE100658D67 /* libMapbox.a */,
+				EC1808931A795DE100658D67 /* Mapbox.bundle */,
+			);
+			path = "Mapbox-iOS-SDK-1.5.0";
+			sourceTree = "<group>";
+		};
+		EC1808591A795DE100658D67 /* Headers */ = {
+			isa = PBXGroup;
+			children = (
+				EC18085A1A795DE100658D67 /* Mapbox.h */,
+				EC18085B1A795DE100658D67 /* RMAbstractMercatorTileSource.h */,
+				EC18085C1A795DE100658D67 /* RMAbstractWebMapSource.h */,
+				EC18085D1A795DE100658D67 /* RMAnnotation.h */,
+				EC18085E1A795DE100658D67 /* RMAttributionViewController.h */,
+				EC18085F1A795DE100658D67 /* RMBingSource.h */,
+				EC1808601A795DE100658D67 /* RMCacheObject.h */,
+				EC1808611A795DE100658D67 /* RMCircle.h */,
+				EC1808621A795DE100658D67 /* RMCircleAnnotation.h */,
+				EC1808631A795DE100658D67 /* RMCompositeSource.h */,
+				EC1808641A795DE100658D67 /* RMConfiguration.h */,
+				EC1808651A795DE100658D67 /* RMCoordinateGridSource.h */,
+				EC1808661A795DE100658D67 /* RMDatabaseCache.h */,
+				EC1808671A795DE100658D67 /* RMDBMapSource.h */,
+				EC1808681A795DE100658D67 /* RMFoundation.h */,
+				EC1808691A795DE100658D67 /* RMFractalTileProjection.h */,
+				EC18086A1A795DE100658D67 /* RMGenericMapSource.h */,
+				EC18086B1A795DE100658D67 /* RMGlobalConstants.h */,
+				EC18086C1A795DE100658D67 /* RMGreatCircleAnnotation.h */,
+				EC18086D1A795DE100658D67 /* RMInteractiveSource.h */,
+				EC18086E1A795DE100658D67 /* RMLoadingTileView.h */,
+				EC18086F1A795DE100658D67 /* RMMapboxSource.h */,
+				EC1808701A795DE100658D67 /* RMMapLayer.h */,
+				EC1808711A795DE100658D67 /* RMMapOverlayView.h */,
+				EC1808721A795DE100658D67 /* RMMapQuestOpenAerialSource.h */,
+				EC1808731A795DE100658D67 /* RMMapQuestOSMSource.h */,
+				EC1808741A795DE100658D67 /* RMMapScrollView.h */,
+				EC1808751A795DE100658D67 /* RMMapTiledLayerView.h */,
+				EC1808761A795DE100658D67 /* RMMapView.h */,
+				EC1808771A795DE100658D67 /* RMMapViewDelegate.h */,
+				EC1808781A795DE100658D67 /* RMMarker.h */,
+				EC1808791A795DE100658D67 /* RMMBTilesSource.h */,
+				EC18087A1A795DE100658D67 /* RMMemoryCache.h */,
+				EC18087B1A795DE100658D67 /* RMNotifications.h */,
+				EC18087C1A795DE100658D67 /* RMOpenCycleMapSource.h */,
+				EC18087D1A795DE100658D67 /* RMOpenSeaMapLayer.h */,
+				EC18087E1A795DE100658D67 /* RMOpenSeaMapSource.h */,
+				EC18087F1A795DE100658D67 /* RMOpenStreetMapSource.h */,
+				EC1808801A795DE100658D67 /* RMPixel.h */,
+				EC1808811A795DE100658D67 /* RMPointAnnotation.h */,
+				EC1808821A795DE100658D67 /* RMPolygonAnnotation.h */,
+				EC1808831A795DE100658D67 /* RMPolylineAnnotation.h */,
+				EC1808841A795DE100658D67 /* RMProjection.h */,
+				EC1808851A795DE100658D67 /* RMQuadTree.h */,
+				EC1808861A795DE100658D67 /* RMShape.h */,
+				EC1808871A795DE100658D67 /* RMShapeAnnotation.h */,
+				EC1808881A795DE100658D67 /* RMStaticMapView.h */,
+				EC1808891A795DE100658D67 /* RMTile.h */,
+				EC18088A1A795DE100658D67 /* RMTileCache.h */,
+				EC18088B1A795DE100658D67 /* RMTileCacheDownloadOperation.h */,
+				EC18088C1A795DE100658D67 /* RMTileImage.h */,
+				EC18088D1A795DE100658D67 /* RMTileMillSource.h */,
+				EC18088E1A795DE100658D67 /* RMTileSource.h */,
+				EC18088F1A795DE100658D67 /* RMTileSourcesContainer.h */,
+				EC1808901A795DE100658D67 /* RMUserLocation.h */,
+				EC1808911A795DE100658D67 /* RMUserTrackingBarButtonItem.h */,
+			);
+			path = Headers;
+			sourceTree = "<group>";
+		};
 		EC825AA11A7683330042FF88 = {
 			isa = PBXGroup;
 			children = (
 				EC825AAC1A7683330042FF88 /* TIY Lunch */,
 				EC825AC21A7683340042FF88 /* TIY LunchTests */,
 				EC825AAB1A7683330042FF88 /* Products */,
+				EC825AD31A7683550042FF88 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -77,8 +227,10 @@
 		EC825AAC1A7683330042FF88 /* TIY Lunch */ = {
 			isa = PBXGroup;
 			children = (
+				EC18089A1A795EBE00658D67 /* TIY Lunch-Bridging-Header.h */,
+				EC825AD61A7684A80042FF88 /* Data.swift */,
 				EC825AAF1A7683330042FF88 /* AppDelegate.swift */,
-				EC825AB11A7683330042FF88 /* ViewController.swift */,
+				EC825AD41A7683F20042FF88 /* MainMapVC.swift */,
 				EC825AB31A7683330042FF88 /* Main.storyboard */,
 				EC825AB61A7683330042FF88 /* Images.xcassets */,
 				EC825AB81A7683340042FF88 /* LaunchScreen.xib */,
@@ -110,6 +262,18 @@
 				EC825AC41A7683340042FF88 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		EC825AD31A7683550042FF88 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				EC1808961A795E9700658D67 /* libsqlite3.dylib */,
+				EC1808971A795E9700658D67 /* libz.dylib */,
+				EC1808581A795DE100658D67 /* Mapbox-iOS-SDK-1.5.0 */,
+				EC825AD11A7683490042FF88 /* MapKit.framework */,
+				EC825ACF1A7683440042FF88 /* CoreLocation.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -192,6 +356,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EC1808951A795DE100658D67 /* Mapbox.bundle in Resources */,
 				EC825AB51A7683330042FF88 /* Main.storyboard in Resources */,
 				EC825ABA1A7683340042FF88 /* LaunchScreen.xib in Resources */,
 				EC825AB71A7683330042FF88 /* Images.xcassets in Resources */,
@@ -212,7 +377,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EC825AB21A7683330042FF88 /* ViewController.swift in Sources */,
+				EC825AD51A7683F20042FF88 /* MainMapVC.swift in Sources */,
+				EC825AD71A7684A80042FF88 /* Data.swift in Sources */,
 				EC825AB01A7683330042FF88 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -336,9 +502,16 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = "TIY Lunch/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Mapbox-iOS-SDK-1.5.0",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "TIY Lunch-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -346,9 +519,15 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = "TIY Lunch/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Mapbox-iOS-SDK-1.5.0",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "TIY Lunch-Bridging-Header.h";
 			};
 			name = Release;
 		};
@@ -405,6 +584,7 @@
 				EC825ACB1A7683340042FF88 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		EC825ACC1A7683340042FF88 /* Build configuration list for PBXNativeTarget "TIY LunchTests" */ = {
 			isa = XCConfigurationList;
@@ -413,6 +593,7 @@
 				EC825ACE1A7683340042FF88 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
