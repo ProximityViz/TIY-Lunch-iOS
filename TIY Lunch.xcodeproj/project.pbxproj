@@ -20,6 +20,8 @@
 		EC825AD21A7683490042FF88 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC825AD11A7683490042FF88 /* MapKit.framework */; };
 		EC825AD51A7683F20042FF88 /* MainMapVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC825AD41A7683F20042FF88 /* MainMapVC.swift */; };
 		EC825AD71A7684A80042FF88 /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC825AD61A7684A80042FF88 /* Data.swift */; };
+		ECE49D551A851180001A70C2 /* ArrowButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECE49D541A851180001A70C2 /* ArrowButton.swift */; };
+		ECE49D5A1A853844001A70C2 /* VenueVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECE49D591A853844001A70C2 /* VenueVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -107,6 +109,8 @@
 		EC825AD11A7683490042FF88 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		EC825AD41A7683F20042FF88 /* MainMapVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainMapVC.swift; sourceTree = "<group>"; };
 		EC825AD61A7684A80042FF88 /* Data.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
+		ECE49D541A851180001A70C2 /* ArrowButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArrowButton.swift; sourceTree = "<group>"; };
+		ECE49D591A853844001A70C2 /* VenueVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VenueVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -227,10 +231,12 @@
 		EC825AAC1A7683330042FF88 /* TIY Lunch */ = {
 			isa = PBXGroup;
 			children = (
+				ECE49D561A851189001A70C2 /* IBViews */,
 				EC18089A1A795EBE00658D67 /* TIY Lunch-Bridging-Header.h */,
 				EC825AD61A7684A80042FF88 /* Data.swift */,
 				EC825AAF1A7683330042FF88 /* AppDelegate.swift */,
 				EC825AD41A7683F20042FF88 /* MainMapVC.swift */,
+				ECE49D591A853844001A70C2 /* VenueVC.swift */,
 				EC825AB31A7683330042FF88 /* Main.storyboard */,
 				EC825AB61A7683330042FF88 /* Images.xcassets */,
 				EC825AB81A7683340042FF88 /* LaunchScreen.xib */,
@@ -276,6 +282,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		ECE49D561A851189001A70C2 /* IBViews */ = {
+			isa = PBXGroup;
+			children = (
+				ECE49D541A851180001A70C2 /* ArrowButton.swift */,
+			);
+			name = IBViews;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -286,6 +300,7 @@
 				EC825AA61A7683330042FF88 /* Sources */,
 				EC825AA71A7683330042FF88 /* Frameworks */,
 				EC825AA81A7683330042FF88 /* Resources */,
+				ECE49D531A850A19001A70C2 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -372,14 +387,32 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		ECE49D531A850A19001A70C2 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "TAGS=\"TODO:|FIXME:\"\necho \"searching ${SRCROOT} for ${TAGS}\"\nfind \"${SRCROOT}\" \\( -name \"*.swift\" \\) -print0 | xargs -0 egrep --with-filename --line-number --only-matching \"($TAGS).*\\$\" | perl -p -e \"s/($TAGS)/ warning: \\$1/\"";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		EC825AA61A7683330042FF88 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ECE49D5A1A853844001A70C2 /* VenueVC.swift in Sources */,
 				EC825AD51A7683F20042FF88 /* MainMapVC.swift in Sources */,
 				EC825AD71A7684A80042FF88 /* Data.swift in Sources */,
 				EC825AB01A7683330042FF88 /* AppDelegate.swift in Sources */,
+				ECE49D551A851180001A70C2 /* ArrowButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
