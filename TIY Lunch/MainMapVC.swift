@@ -76,32 +76,6 @@ class MainMapVC: UIViewController, MKMapViewDelegate, RMMapViewDelegate, CLLocat
         let blueColor = "#00A5B1"
         let greenColor = "#0DC67D"
         let greenUIColor = UIColor(red:0.05, green:0.78, blue:0.49, alpha:1)
-        
-        // marker size
-        var markerSize = "small"
-        var markerCount = 0
-        
-//        if annotation.userInfo?.objectForKey?("Count") as? Int == 2 {
-//            markerSize = "medium"
-//        } else if annotation.userInfo?.objectForKey?("Count") as? Int == 3 {
-//            markerSize = "large"
-//        }
-        
-//        if let markerCount = annotation.userInfo?.objectForKey?("Count") as? Int {
-//            switch markerCount as Int {
-//                
-//            case 2:
-//                markerSize = "medium"
-//            case 3:
-//                markerSize = "large"
-//            default:
-//                markerSize = "small"
-//            }
-//            
-//        }
-        
-        
-        // TODO: These numbers (2, 3) will need to change as the data changes (or make quantiles)
     
         if annotation.title? == "The Iron Yard" {
             
@@ -141,10 +115,41 @@ class MainMapVC: UIViewController, MKMapViewDelegate, RMMapViewDelegate, CLLocat
             
             return nil
             
-        } else if annotation.userInfo.objectForKey?("Type") as NSString == "Eating" {
+        } else { // markers from mapbox data
+            
+            // type
+            var markerImage = "restaurant"
+            var markerSize = "small"
+            var markerColor = greenColor
+            
+            // TODO: Refactoring: probably should give annotation.userInfo.objectForKey("Type") a variable name above somewhere. Same with other keys.
+            switch annotation.userInfo.objectForKey("Type") as String {
+                
+            case "Eating":
+                markerImage = "restaurant"
+                markerColor = yellowColor
+            case "Drinking":
+                markerImage = "beer"
+                markerColor = orangeColor
+            default:
+                markerImage = "embassy"
+                markerColor = redColor
+                
+            }
+            
+            switch annotation.userInfo.objectForKey("Count") as String {
+                
+            case "2":
+                markerSize = "medium"
+            case "3":
+                markerSize = "large"
+            default:
+                markerSize = "small"
+                
+            }
             
 //            println(annotation.description)
-            println(annotation.userInfo)
+//            println(annotation.userInfo)
             
 //                {
 //                    Address = "Peachtree and Edgewood";
@@ -159,11 +164,8 @@ class MainMapVC: UIViewController, MKMapViewDelegate, RMMapViewDelegate, CLLocat
 //                    "marker-symbol" = restaurant;
 //                    title = "Tin Drum";
 //            }
-
-            // TODO: Set sizes
-            // TODO: move colors to somewhere else and have fewer "if else"s here
             
-            var lunchMarker = RMMarker(mapboxMarkerImage: "restaurant", tintColorHex: yellowColor, sizeString: markerSize)
+            var lunchMarker = RMMarker(mapboxMarkerImage: markerImage, tintColorHex: markerColor, sizeString: markerSize)
             lunchMarker.canShowCallout = true
             
             var rightArrowButton = ArrowButton(frame: CGRectMake(0, 0, 22, 22))
@@ -172,30 +174,6 @@ class MainMapVC: UIViewController, MKMapViewDelegate, RMMapViewDelegate, CLLocat
             lunchMarker.rightCalloutAccessoryView = rightArrowButton
 
             return lunchMarker
-            
-        } else if annotation.userInfo.objectForKey?("Type") as NSString == "Drinking" {
-            
-            var drinkMarker = RMMarker(mapboxMarkerImage: "beer", tintColorHex: orangeColor, sizeString: markerSize)
-            drinkMarker.canShowCallout = true
-            
-            var rightArrowButton = ArrowButton(frame: CGRectMake(0, 0, 22, 22))
-            rightArrowButton.strokeColor = greenUIColor
-            
-            drinkMarker.rightCalloutAccessoryView = rightArrowButton
-            
-            return drinkMarker
-            
-        } else {
-            
-            var miscMarker = RMMarker(mapboxMarkerImage: "marker stroke", tintColorHex: redColor, sizeString: markerSize)
-            miscMarker.canShowCallout = true
-            
-            var rightArrowButton = ArrowButton(frame: CGRectMake(0, 0, 22, 22))
-            rightArrowButton.strokeColor = greenUIColor
-            
-            miscMarker.rightCalloutAccessoryView = rightArrowButton
-            
-            return miscMarker
             
         }
         
@@ -210,6 +188,7 @@ class MainMapVC: UIViewController, MKMapViewDelegate, RMMapViewDelegate, CLLocat
         //        FeedData.mainData().selectedSeat = FeedData.mainData().feedItems[index]
         venueTitle = annotation.title
         venueCoord = annotation.coordinate
+        venueInfo = annotation.userInfo
         
         navigationController?.pushViewController(venueVC, animated: true)
         
@@ -237,8 +216,6 @@ class MainMapVC: UIViewController, MKMapViewDelegate, RMMapViewDelegate, CLLocat
         for view in views {
             
             if view.annotation.title == "You Are Here" {
-                
-                println("check")
                 
                 view.superview?.bringSubviewToFront(view)
                 

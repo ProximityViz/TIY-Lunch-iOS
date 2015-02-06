@@ -187,6 +187,7 @@
                     </view>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" barStyle="black" translucent="NO" prompted="NO"/>
                     <connections>
+                        <outlet property="addressLabel" destination="WE3-CX-qku" id="qqc-A8-6cN"/>
                         <outlet property="nameLabel" destination="m3I-hP-faF" id="JZV-TO-ph9"/>
                     </connections>
                 </viewController>

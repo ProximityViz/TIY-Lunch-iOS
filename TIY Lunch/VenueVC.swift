@@ -10,6 +10,7 @@ import UIKit
 
 var venueTitle:String = ""
 var venueCoord:CLLocationCoordinate2D = CLLocationCoordinate2DMake(0, 0)
+var venueInfo:AnyObject = ""
 
 class VenueVC: UIViewController, RMMapViewDelegate, CLLocationManagerDelegate {
     
@@ -18,6 +19,7 @@ class VenueVC: UIViewController, RMMapViewDelegate, CLLocationManagerDelegate {
     var mapboxView = RMMapView()
     
     @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var addressLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -54,6 +56,26 @@ class VenueVC: UIViewController, RMMapViewDelegate, CLLocationManagerDelegate {
         
         // MARK: Labels
         nameLabel.text = venueTitle
+        
+        // TODO: change address info to what's pulled from Foursquare
+        addressLabel.text = venueInfo.objectForKey("Address") as String
+        
+        
+        // annotation.userInfo.objectForKey("Count") as NSString
+        
+        //                {
+        //                    Address = "Peachtree and Edgewood";
+        //                    Coordinates = "33.7558504,-84.3888957";
+        //                    Count = 2;
+        //                    Place = "Tin Drum";
+        //                    Type = Eating;
+        //                    description = "Peachtree and Edgewood";
+        //                    id = "marker-i5h0ggxfu";
+        //                    "marker-color" = "#d2b42a";
+        //                    "marker-size" = "";
+        //                    "marker-symbol" = restaurant;
+        //                    title = "Tin Drum";
+        //            }
 
         // Do any additional setup after loading the view.
     }
