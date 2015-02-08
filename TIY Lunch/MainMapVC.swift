@@ -14,6 +14,10 @@ class MainMapVC: UIViewController, MKMapViewDelegate, RMMapViewDelegate, CLLocat
     
     @IBOutlet weak var drawerView: UIView!
     @IBOutlet weak var drawerRightConstraint: NSLayoutConstraint!
+
+    @IBOutlet weak var foodButton: UIButton!
+    @IBOutlet weak var drinksButton: UIButton!
+    @IBOutlet weak var miscButton: UIButton!
     
     var manager = CLLocationManager()
     var mapboxView = RMMapView()
@@ -21,7 +25,7 @@ class MainMapVC: UIViewController, MKMapViewDelegate, RMMapViewDelegate, CLLocat
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        drawerRightConstraint.constant = -256
+        drawerRightConstraint.constant = -151
         
         // MARK: Geolocation setup
         manager.delegate = self;
@@ -244,11 +248,45 @@ class MainMapVC: UIViewController, MKMapViewDelegate, RMMapViewDelegate, CLLocat
         
     }
     
+    // MARK: Drawer
     @IBAction func showHideDrawer(sender: AnyObject) {
         
-        drawerRightConstraint.constant = (drawerRightConstraint.constant == -256) ? 0 : -256
+        drawerRightConstraint.constant = (drawerRightConstraint.constant == -151) ? 0 : -151
         
     }
+    
+    @IBAction func tappedFood(sender: AnyObject) {
+        
+        // TODO: add filtering code, which might change if statement to an "if foodIsOn"
+        
+        if foodButton.imageView?.image == UIImage(named: "food yellow") {
+            foodButton.setImage(UIImage(named: "food grey"), forState: .Normal)
+        } else {
+            foodButton.setImage(UIImage(named: "food yellow"), forState: .Normal)
+        }
+        
+    }
+    
+    @IBAction func tappedDrink(sender: AnyObject) {
+        
+        if drinksButton.imageView?.image == UIImage(named: "drink orange") {
+            drinksButton.setImage(UIImage(named: "drink grey"), forState: .Normal)
+        } else {
+            drinksButton.setImage(UIImage(named: "drink orange"), forState: .Normal)
+        }
+        
+    }
+    
+    @IBAction func tappedMisc(sender: AnyObject) {
+        
+        if miscButton.imageView?.image == UIImage(named: "misc red") {
+            miscButton.setImage(UIImage(named: "misc grey"), forState: .Normal)
+        } else {
+            miscButton.setImage(UIImage(named: "misc red"), forState: .Normal)
+        }
+        
+    }
+    
     
     override func viewWillDisappear(animated: Bool) {
         navigationController?.setNavigationBarHidden(false, animated: false)
