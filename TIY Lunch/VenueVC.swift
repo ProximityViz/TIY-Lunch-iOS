@@ -7,19 +7,19 @@
 //
 
 import UIKit
+import MapKit
 
 var venueTitle:String = ""
 var venueCoord:CLLocationCoordinate2D = CLLocationCoordinate2DMake(0, 0)
 var venueInfo:AnyObject = ""
-// FIXME: This will be part of venueInfo, later
-var venueID:String = ""
 
-class VenueVC: UIViewController, RMMapViewDelegate, CLLocationManagerDelegate {
+class VenueVC: UIViewController, RMMapViewDelegate,  CLLocationManagerDelegate {
     
     
     var manager = CLLocationManager()
     var mapboxView = RMMapView()
     var foundVenue: [String:AnyObject] = [:]
+    var venueID:String = ""
     
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var addressLabel: UILabel!
@@ -28,6 +28,8 @@ class VenueVC: UIViewController, RMMapViewDelegate, CLLocationManagerDelegate {
     @IBOutlet weak var hoursLabel: UILabel!
     @IBOutlet weak var menuLabel: UILabel!
     @IBOutlet weak var descriptionLabel: UILabel!
+    @IBOutlet weak var priceLabel: UILabel!
+    @IBOutlet weak var distanceLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,10 +38,21 @@ class VenueVC: UIViewController, RMMapViewDelegate, CLLocationManagerDelegate {
         urlButton.contentHorizontalAlignment = .Left
         
         // MARK: Foursquare
-        let venueID = "644RJR"
+        var foursquareID = venueInfo.objectForKey("Foursquare") as? String
+        if foursquareID != "" {
+            if var venueID:String = foursquareID {
+                venueID = venueInfo.objectForKey?("Foursquare") as String
+                println("running")
+                // probably put FourSquareRequest inside here
+                foundVenue = FourSquareRequest.requestVenueWithID(venueID)
+                println(foundVenue)
+            } else {
+                venueID = ""
+            }
+        }
         
-        // FIXME: location should come from
-        foundVenue = FourSquareRequest.requestVenueWithID("4adba2adf964a5209c2921e3")
+//        foundVenue = FourSquareRequest.requestVenueWithID(venueID)
+        println(venueInfo)
         
         // MARK: Geolocation setup
         manager.delegate = self;
@@ -51,13 +64,13 @@ class VenueVC: UIViewController, RMMapViewDelegate, CLLocationManagerDelegate {
         RMConfiguration().accessToken = "pk.eyJ1IjoibW9sbGllIiwiYSI6IjdoX1Z4d0EifQ.hXHw5tonOOCDlvh3oKQNXA"
         
         var mapboxFrame = CGRectMake(0, 0, view.bounds.width, 200)
-        var mapboxTiles = RMMapboxSource(mapID: "mollie.l2ibmbpc")
+        var mapboxTiles = RMMapboxSource(mapID: "mollie.l5ldhf1o")
         mapboxView = RMMapView(frame: mapboxFrame, andTilesource: mapboxTiles)
         mapboxView.delegate = self
         
         mapboxView.tileSource.cacheable = true
         // FIXME: possibly base zoom on geolocation?
-        mapboxView.zoom = 17
+        mapboxView.zoom = 16
         mapboxView.centerCoordinate = venueCoord
         mapboxView.adjustTilesForRetinaDisplay = true
         mapboxView.userInteractionEnabled = true
@@ -99,12 +112,40 @@ class VenueVC: UIViewController, RMMapViewDelegate, CLLocationManagerDelegate {
                 hoursLabel.text = hours["status"] as? String
             }
             
-            // TODO: menu
+            if let price: AnyObject = foundVenue["price"] {
+
+                if let tier = price["tier"] as? Int {
+             
+                    switch tier {
+                        
+                    case 1:
+                        priceLabel.text = "$"
+                    case 2:
+                        priceLabel.text = "$"
+                    case 3:
+                        priceLabel.text = "$"
+                    case 4:
+                        priceLabel.text = "$"
+                    default:
+                        priceLabel.text = ""
+                    
+                    
+                    }
+                    
+                }
+                
+            }
+            
+            let venueLocation = CLLocation(latitude: venueCoord.latitude, longitude: venueCoord.longitude)
+            let tiyLocation = CLLocation(latitude: 33.7518732, longitude: -84.3914068)
+            let meters:CLLocationDistance = venueLocation.distanceFromLocation(tiyLocation)
+            let df = MKDistanceFormatter()
+            df.unitStyle = .Full
+            distanceLabel.text = df.stringFromDistance(meters)
             
         } else {
             addressLabel.text = venueInfo.objectForKey("Address") as? String
         }
-        // price tier?
         
         
     }
@@ -131,11 +172,26 @@ class VenueVC: UIViewController, RMMapViewDelegate, CLLocationManagerDelegate {
             return nil
             
         } else {
+            // type
+            var markerImage = "restaurant"
+            var markerSize = "small"
+            var markerColor = greenColor
             
-            var lunchMarker = RMMarker(mapboxMarkerImage: "restaurant", tintColorHex: "#D2B42A", sizeString: "medium")
-            lunchMarker.canShowCallout = true
+            switch venueInfo.objectForKey("Type") as String {
+                
+            case "Eating":
+                markerImage = "restaurant"
+                markerColor = yellowColor
+            case "Drinking":
+                markerImage = "beer"
+                markerColor = orangeColor
+            default:
+                markerImage = "embassy"
+                markerColor = redColor
+            }
             
-            return lunchMarker
+            var venueMarker = RMMarker(mapboxMarkerImage: markerImage, tintColorHex: markerColor, sizeString: "medium")
+            return venueMarker
             
         }
         

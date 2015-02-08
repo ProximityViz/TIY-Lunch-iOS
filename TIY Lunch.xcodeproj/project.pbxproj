@@ -23,6 +23,7 @@
 		ECE49D551A851180001A70C2 /* ArrowButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECE49D541A851180001A70C2 /* ArrowButton.swift */; };
 		ECE49D5A1A853844001A70C2 /* VenueVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECE49D591A853844001A70C2 /* VenueVC.swift */; };
 		ECE49D5D1A87B798001A70C2 /* FourSquareRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECE49D5C1A87B798001A70C2 /* FourSquareRequest.swift */; };
+		ECE49D5F1A88131A001A70C2 /* fontawesome-webfont.ttf in Resources */ = {isa = PBXBuildFile; fileRef = ECE49D5E1A8811D5001A70C2 /* fontawesome-webfont.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -113,6 +114,7 @@
 		ECE49D541A851180001A70C2 /* ArrowButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArrowButton.swift; sourceTree = "<group>"; };
 		ECE49D591A853844001A70C2 /* VenueVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VenueVC.swift; sourceTree = "<group>"; };
 		ECE49D5C1A87B798001A70C2 /* FourSquareRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FourSquareRequest.swift; sourceTree = "<group>"; };
+		ECE49D5E1A8811D5001A70C2 /* fontawesome-webfont.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "fontawesome-webfont.ttf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -217,6 +219,7 @@
 				EC825AAC1A7683330042FF88 /* TIY Lunch */,
 				EC825AC21A7683340042FF88 /* TIY LunchTests */,
 				EC825AAB1A7683330042FF88 /* Products */,
+				ECE49D5E1A8811D5001A70C2 /* fontawesome-webfont.ttf */,
 				EC825AD31A7683550042FF88 /* Frameworks */,
 			);
 			sourceTree = "<group>";
@@ -384,6 +387,7 @@
 			files = (
 				EC1808951A795DE100658D67 /* Mapbox.bundle in Resources */,
 				EC825AB51A7683330042FF88 /* Main.storyboard in Resources */,
+				ECE49D5F1A88131A001A70C2 /* fontawesome-webfont.ttf in Resources */,
 				EC825ABA1A7683340042FF88 /* LaunchScreen.xib in Resources */,
 				EC825AB71A7683330042FF88 /* Images.xcassets in Resources */,
 			);

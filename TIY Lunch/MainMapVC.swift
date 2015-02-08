@@ -129,6 +129,7 @@ class MainMapVC: UIViewController, MKMapViewDelegate, RMMapViewDelegate, CLLocat
             
         } else { // markers from mapbox data
             
+            // TODO: move this to be its own function in a separate file if it ends up being used twice
             // type
             var markerImage = "restaurant"
             var markerSize = "small"

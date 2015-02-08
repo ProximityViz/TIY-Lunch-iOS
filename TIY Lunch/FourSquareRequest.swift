@@ -17,15 +17,7 @@ class FourSquareRequest: NSObject {
     
     class func requestVenueWithID(id: String) -> [String:AnyObject] {
         
-//        var requestString = API_URL + "venues/search"
-//            + "?" + "client_id=" + CLIENT_ID
-//            + "&" + "client_secret=" + CLIENT_SECRET
-//            + "&" + "v=20130815"
-//        requestString = requestString
-//            + "&" + "ll=33.7518732,-84.3914068"
-//            + "&" + "radius=1600"
-//        requestString = requestString
-//            + "&" + "query=taco"
+        println("id = \(id)")
         
         let requestString = API_URL + "venues/" + id
             + "?" + "client_id=" + CLIENT_ID
