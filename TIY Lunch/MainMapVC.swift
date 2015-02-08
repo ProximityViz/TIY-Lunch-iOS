@@ -53,7 +53,6 @@ class MainMapVC: UIViewController, MKMapViewDelegate, RMMapViewDelegate, CLLocat
         mapboxView.delegate = self
         
         mapboxView.tileSource.cacheable = true
-        // FIXME: should next two lines be hardcoded?
         mapboxView.zoom = 15
         mapboxView.centerCoordinate = CLLocationCoordinate2DMake(33.755, -84.39)
         mapboxView.adjustTilesForRetinaDisplay = true
@@ -81,29 +80,6 @@ class MainMapVC: UIViewController, MKMapViewDelegate, RMMapViewDelegate, CLLocat
         
         navigationController?.setNavigationBarHidden(true, animated: false)
     }
-    
-//    func mapView(mapView: MKMapView!, viewForAnnotation annotation: MKAnnotation!) -> MKAnnotationView! {
-//        
-//        
-//        switch annotation.userInfo.objectForKey("Type") as String {
-//            
-//        case "Eating":
-//            if foodShown == false {
-//                return nil
-//            }
-//            markerImage = "restaurant"
-//            markerColor = yellowColor
-//            
-//        case "Drinking":
-//            markerImage = "beer"
-//            markerColor = orangeColor
-//        default:
-//            markerImage = "embassy"
-//            markerColor = redColor
-//            
-//        }
-//        
-//    }
     
     func mapView(mapView: RMMapView!, layerForAnnotation annotation: RMAnnotation!) -> RMMapLayer! {
         
@@ -285,13 +261,13 @@ class MainMapVC: UIViewController, MKMapViewDelegate, RMMapViewDelegate, CLLocat
         if drinksShown == true {
             
             drinksButton.setImage(UIImage(named: "drink grey"), forState: .Normal)
-            drinksShown == false
+            drinksShown = false
             mapboxView.removeAnnotations(drinksAnnotations)
             
         } else {
             
             drinksButton.setImage(UIImage(named: "drink orange"), forState: .Normal)
-            drinksShown == true
+            drinksShown = true
             mapboxView.addAnnotations(drinksAnnotations)
             
         }
@@ -303,13 +279,13 @@ class MainMapVC: UIViewController, MKMapViewDelegate, RMMapViewDelegate, CLLocat
         if miscShown == true {
             
             miscButton.setImage(UIImage(named: "misc grey"), forState: .Normal)
-            miscShown == false
+            miscShown = false
             mapboxView.removeAnnotations(miscAnnotations)
             
         } else {
             
             miscButton.setImage(UIImage(named: "misc red"), forState: .Normal)
-            miscShown == true
+            miscShown = true
             mapboxView.addAnnotations(miscAnnotations)
             
         }
