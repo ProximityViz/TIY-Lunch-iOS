@@ -10,6 +10,18 @@ import UIKit
 import MapKit
 import CoreLocation
 
+// marker colors
+let yellowColor = "#D5B810"
+let orangeColor = "#DB820C"
+let redColor = "#C94E43"
+let redUIColor = UIColor(red:0.79, green:0.31, blue:0.26, alpha:1)
+
+// accessory colors
+let blueColor = "#00A5B1"
+let blueUIColor = UIColor(red:0, green:0.65, blue:0.69, alpha:1)
+let greenColor = "#0DC67D"
+let greenUIColor = UIColor(red:0.05, green:0.78, blue:0.49, alpha:1)
+
 class MainMapVC: UIViewController, MKMapViewDelegate, RMMapViewDelegate, CLLocationManagerDelegate {
     
     @IBOutlet weak var drawerView: UIView!
@@ -82,16 +94,6 @@ class MainMapVC: UIViewController, MKMapViewDelegate, RMMapViewDelegate, CLLocat
     }
     
     func mapView(mapView: RMMapView!, layerForAnnotation annotation: RMAnnotation!) -> RMMapLayer! {
-        
-        // marker colors
-        let yellowColor = "#D5B810"
-        let orangeColor = "#DB820C"
-        let redColor = "#C94E43"
-        
-        // accessory colors
-        let blueColor = "#00A5B1"
-        let greenColor = "#0DC67D"
-        let greenUIColor = UIColor(red:0.05, green:0.78, blue:0.49, alpha:1)
     
         if annotation.title? == "The Iron Yard" {
             

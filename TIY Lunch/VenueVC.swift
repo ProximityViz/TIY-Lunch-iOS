@@ -11,19 +11,36 @@ import UIKit
 var venueTitle:String = ""
 var venueCoord:CLLocationCoordinate2D = CLLocationCoordinate2DMake(0, 0)
 var venueInfo:AnyObject = ""
+// FIXME: This will be part of venueInfo, later
+var venueID:String = ""
 
 class VenueVC: UIViewController, RMMapViewDelegate, CLLocationManagerDelegate {
     
     
     var manager = CLLocationManager()
     var mapboxView = RMMapView()
+    var foundVenue: [String:AnyObject] = [:]
     
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var addressLabel: UILabel!
+    @IBOutlet weak var categoryLabel: UILabel!
+    @IBOutlet weak var urlButton: UIButton!
+    @IBOutlet weak var hoursLabel: UILabel!
+    @IBOutlet weak var menuLabel: UILabel!
+    @IBOutlet weak var descriptionLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-            
+        
+        // MARK: Aesthetics
+        urlButton.contentHorizontalAlignment = .Left
+        
+        // MARK: Foursquare
+        let venueID = "644RJR"
+        
+        // FIXME: location should come from
+        foundVenue = FourSquareRequest.requestVenueWithID("4adba2adf964a5209c2921e3")
+        
         // MARK: Geolocation setup
         manager.delegate = self;
         manager.desiredAccuracy = kCLLocationAccuracyBest
@@ -46,8 +63,6 @@ class VenueVC: UIViewController, RMMapViewDelegate, CLLocationManagerDelegate {
         mapboxView.userInteractionEnabled = true
         
         var annotation = RMAnnotation(mapView: mapboxView, coordinate: venueCoord, andTitle: venueTitle)
-//        annotation.subtitle = "Address"
-        //        annotation.userInfo = "custom icon"
         
         mapboxView.addAnnotation(annotation)
         
@@ -57,27 +72,56 @@ class VenueVC: UIViewController, RMMapViewDelegate, CLLocationManagerDelegate {
         // MARK: Labels
         nameLabel.text = venueTitle
         
-        // TODO: change address info to what's pulled from Foursquare
-        addressLabel.text = venueInfo.objectForKey("Address") as? String
+        if foundVenue.count > 0 {
+            
+            if let location: AnyObject = foundVenue["location"] {
+                addressLabel.text = location["address"] as? String
+            }
+            
+            if let categories: AnyObject = foundVenue["categories"] {
+                categoryLabel.text = categories[0]["name"] as? String
+            }
+            
+            if let url: AnyObject = foundVenue["url"] {
+                // TODO: change text color to blue
+                
+//                UIApplication.sharedApplication().openURL(NSURL(string:"https://docs.google.com/forms/d/1S7XVU0ePdFFihdAL4NjoJeThoGho0DS84lix__K99JA/viewform")!)
+                urlButton.setTitleColor(blueUIColor, forState: .Normal)
+                urlButton.setTitle(url as? String, forState: .Normal)
+            }
+            
+            if let hours: AnyObject = foundVenue["hours"] {
+                if hours["isOpen"] as? Int == 1 {
+                    hoursLabel.textColor = greenUIColor
+                } else {
+                    hoursLabel.textColor = redUIColor
+                }
+                hoursLabel.text = hours["status"] as? String
+            }
+            
+            // TODO: menu
+            
+        } else {
+            addressLabel.text = venueInfo.objectForKey("Address") as? String
+        }
+        // price tier?
         
         
-        // annotation.userInfo.objectForKey("Count") as NSString
+    }
+    
+    @IBAction func urlButtonPressed(sender: AnyObject) {
+//        UIApplication.sharedApplication().openURL(NSURL(string:"https://docs.google.com/forms/d/1S7XVU0ePdFFihdAL4NjoJeThoGho0DS84lix__K99JA/viewform")!)
         
-        //                {
-        //                    Address = "Peachtree and Edgewood";
-        //                    Coordinates = "33.7558504,-84.3888957";
-        //                    Count = 2;
-        //                    Place = "Tin Drum";
-        //                    Type = Eating;
-        //                    description = "Peachtree and Edgewood";
-        //                    id = "marker-i5h0ggxfu";
-        //                    "marker-color" = "#d2b42a";
-        //                    "marker-size" = "";
-        //                    "marker-symbol" = restaurant;
-        //                    title = "Tin Drum";
-        //            }
-
-        // Do any additional setup after loading the view.
+        if foundVenue.count > 0 {
+            
+            if let url: String = foundVenue["url"] as? String {
+                
+                UIApplication.sharedApplication().openURL(NSURL(string:url)!)
+                
+            }
+            
+        }
+        
     }
     
     func mapView(mapView: RMMapView!, layerForAnnotation annotation: RMAnnotation!) -> RMMapLayer! {

@@ -22,6 +22,7 @@
 		EC825AD71A7684A80042FF88 /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC825AD61A7684A80042FF88 /* Data.swift */; };
 		ECE49D551A851180001A70C2 /* ArrowButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECE49D541A851180001A70C2 /* ArrowButton.swift */; };
 		ECE49D5A1A853844001A70C2 /* VenueVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECE49D591A853844001A70C2 /* VenueVC.swift */; };
+		ECE49D5D1A87B798001A70C2 /* FourSquareRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECE49D5C1A87B798001A70C2 /* FourSquareRequest.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -111,6 +112,7 @@
 		EC825AD61A7684A80042FF88 /* Data.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
 		ECE49D541A851180001A70C2 /* ArrowButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArrowButton.swift; sourceTree = "<group>"; };
 		ECE49D591A853844001A70C2 /* VenueVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VenueVC.swift; sourceTree = "<group>"; };
+		ECE49D5C1A87B798001A70C2 /* FourSquareRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FourSquareRequest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -232,6 +234,7 @@
 			isa = PBXGroup;
 			children = (
 				ECE49D561A851189001A70C2 /* IBViews */,
+				ECE49D5B1A87B78B001A70C2 /* Models */,
 				EC18089A1A795EBE00658D67 /* TIY Lunch-Bridging-Header.h */,
 				EC825AD61A7684A80042FF88 /* Data.swift */,
 				EC825AAF1A7683330042FF88 /* AppDelegate.swift */,
@@ -288,6 +291,14 @@
 				ECE49D541A851180001A70C2 /* ArrowButton.swift */,
 			);
 			name = IBViews;
+			sourceTree = "<group>";
+		};
+		ECE49D5B1A87B78B001A70C2 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				ECE49D5C1A87B798001A70C2 /* FourSquareRequest.swift */,
+			);
+			name = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -408,6 +419,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ECE49D5D1A87B798001A70C2 /* FourSquareRequest.swift in Sources */,
 				ECE49D5A1A853844001A70C2 /* VenueVC.swift in Sources */,
 				EC825AD51A7683F20042FF88 /* MainMapVC.swift in Sources */,
 				EC825AD71A7684A80042FF88 /* Data.swift in Sources */,
