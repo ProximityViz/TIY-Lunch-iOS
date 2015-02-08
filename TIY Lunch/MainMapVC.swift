@@ -12,11 +12,16 @@ import CoreLocation
 
 class MainMapVC: UIViewController, MKMapViewDelegate, RMMapViewDelegate, CLLocationManagerDelegate {
     
+    @IBOutlet weak var drawerView: UIView!
+    @IBOutlet weak var drawerRightConstraint: NSLayoutConstraint!
+    
     var manager = CLLocationManager()
     var mapboxView = RMMapView()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        drawerRightConstraint.constant = -256
         
         // MARK: Geolocation setup
         manager.delegate = self;
@@ -27,7 +32,7 @@ class MainMapVC: UIViewController, MKMapViewDelegate, RMMapViewDelegate, CLLocat
         // MARK: Mapbox
         RMConfiguration().accessToken = "pk.eyJ1IjoibW9sbGllIiwiYSI6IjdoX1Z4d0EifQ.hXHw5tonOOCDlvh3oKQNXA"
         
-        var mapboxFrame = CGRectMake(0, 20, view.bounds.width, (view.bounds.height - 80))
+        var mapboxFrame = CGRectMake(0, 20, view.bounds.width, (view.bounds.height - 20))
         var mapboxTiles = RMMapboxSource(mapID: "mollie.l2ibmbpc")
         mapboxView = RMMapView(frame: mapboxFrame, andTilesource: mapboxTiles)
         var mapboxSource = RMMapboxSource(mapID: "mollie.l2ibmbpc", enablingDataOnMapView: mapboxView)
@@ -55,7 +60,11 @@ class MainMapVC: UIViewController, MKMapViewDelegate, RMMapViewDelegate, CLLocat
         mapboxView.addAnnotation(halfAnnotation)
         mapboxView.addAnnotation(quarterAnnotation)
         
-        view.addSubview(mapboxView)
+//        view.addSubview(mapboxView)
+        view.insertSubview(mapboxView, belowSubview: drawerView)
+        
+            
+//            - (void)insertSubview:(UIView *)view belowSubview:(UIView *)siblingSubview;
         
     }
     
@@ -232,6 +241,12 @@ class MainMapVC: UIViewController, MKMapViewDelegate, RMMapViewDelegate, CLLocat
     func locationManager(manager: CLLocationManager!, didFailWithError error: NSError!) {
         
         println(error)
+        
+    }
+    
+    @IBAction func showHideDrawer(sender: AnyObject) {
+        
+        drawerRightConstraint.constant = (drawerRightConstraint.constant == -256) ? 0 : -256
         
     }
     

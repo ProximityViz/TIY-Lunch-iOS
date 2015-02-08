@@ -17,61 +17,92 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dfa-ri-OBp">
-                                <rect key="frame" x="8" y="548" width="510" height="44"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="u8X-U4-BaC">
+                                <rect key="frame" x="300" y="0.0" width="300" height="600"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iNR-Bg-C98">
+                                        <rect key="frame" x="0.0" y="556" width="44" height="44"/>
+                                        <color key="backgroundColor" red="0.0" green="0.64705882349999999" blue="0.69411764710000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="44" id="CuL-pG-jSh"/>
+                                            <constraint firstAttribute="height" constant="44" id="V6i-Pu-tRg"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                        <state key="normal" title="...">
+                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="showHideDrawer:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="dUD-V6-edw"/>
+                                        </connections>
+                                    </button>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CIX-Ja-p5G">
+                                        <rect key="frame" x="44" y="0.0" width="256" height="600"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dfa-ri-OBp">
+                                                <rect key="frame" x="8" y="548" width="240" height="44"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="44" id="Jgn-gE-dV9"/>
+                                                    <constraint firstAttribute="width" constant="300" id="kzc-am-yhN"/>
+                                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="44" id="lNQ-Be-rRo"/>
+                                                    <constraint firstAttribute="height" constant="44" id="tnh-vg-h2p"/>
+                                                </constraints>
+                                                <state key="normal" title="Contribute to the map">
+                                                    <color key="titleColor" red="0.11764705882352941" green="0.11764705882352941" blue="0.11764705882352941" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <variation key="default">
+                                                    <mask key="constraints">
+                                                        <exclude reference="kzc-am-yhN"/>
+                                                        <exclude reference="tnh-vg-h2p"/>
+                                                    </mask>
+                                                </variation>
+                                                <connections>
+                                                    <action selector="contributeWasPressed:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="eAG-DR-ZYs"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" red="0.1176470588" green="0.1176470588" blue="0.1176470588" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="256" id="06b-vy-qK2"/>
+                                            <constraint firstItem="Dfa-ri-OBp" firstAttribute="leading" secondItem="CIX-Ja-p5G" secondAttribute="leading" constant="8" id="Pbb-bQ-BM6"/>
+                                            <constraint firstAttribute="bottom" secondItem="Dfa-ri-OBp" secondAttribute="bottom" constant="8" id="j5W-Ls-KaY"/>
+                                            <constraint firstAttribute="trailing" secondItem="Dfa-ri-OBp" secondAttribute="trailing" constant="8" id="q90-Q4-4l2"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="44" id="Jgn-gE-dV9"/>
-                                    <constraint firstAttribute="width" constant="300" id="kzc-am-yhN"/>
-                                    <constraint firstAttribute="height" constant="44" id="tnh-vg-h2p"/>
+                                    <constraint firstItem="iNR-Bg-C98" firstAttribute="leading" secondItem="u8X-U4-BaC" secondAttribute="leading" id="2Nq-gN-uKc"/>
+                                    <constraint firstAttribute="bottom" secondItem="CIX-Ja-p5G" secondAttribute="bottom" id="A5e-mk-K4d"/>
+                                    <constraint firstItem="iNR-Bg-C98" firstAttribute="top" secondItem="u8X-U4-BaC" secondAttribute="top" id="Lg3-Wh-8EN"/>
+                                    <constraint firstAttribute="trailing" secondItem="CIX-Ja-p5G" secondAttribute="trailing" id="PRh-od-V1T"/>
+                                    <constraint firstItem="CIX-Ja-p5G" firstAttribute="top" secondItem="u8X-U4-BaC" secondAttribute="top" id="XtJ-rC-Moi"/>
+                                    <constraint firstAttribute="bottom" secondItem="iNR-Bg-C98" secondAttribute="bottom" id="ez1-DZ-XMd"/>
+                                    <constraint firstAttribute="width" constant="300" id="u5r-og-zJc"/>
                                 </constraints>
-                                <state key="normal" title="Contribute to the map">
-                                    <color key="titleColor" red="0.11764705882352941" green="0.11764705882352941" blue="0.11764705882352941" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
                                 <variation key="default">
                                     <mask key="constraints">
-                                        <exclude reference="kzc-am-yhN"/>
-                                        <exclude reference="tnh-vg-h2p"/>
+                                        <exclude reference="Lg3-Wh-8EN"/>
                                     </mask>
                                 </variation>
-                                <connections>
-                                    <action selector="contributeWasPressed:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="eAG-DR-ZYs"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rTM-GG-152">
-                                <rect key="frame" x="526" y="548" width="66" height="44"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="44" id="iOW-PV-89f"/>
-                                    <constraint firstAttribute="width" constant="66" id="yJL-c6-XCG"/>
-                                </constraints>
-                                <state key="normal" title="Info">
-                                    <color key="titleColor" red="0.1176470588" green="0.1176470588" blue="0.1176470588" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                            </button>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="0.11764705882352941" green="0.11764705882352941" blue="0.11764705882352941" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="Dfa-ri-OBp" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" constant="8" id="4JN-Ru-Ali"/>
-                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="rTM-GG-152" secondAttribute="bottom" constant="8" id="Thm-QF-Pdv"/>
-                            <constraint firstAttribute="centerX" secondItem="Dfa-ri-OBp" secondAttribute="centerX" id="Tlc-te-vDC"/>
-                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="Dfa-ri-OBp" secondAttribute="bottom" constant="8" id="cob-e9-LPN"/>
-                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="Dfa-ri-OBp" secondAttribute="bottom" constant="8" id="dSH-mZ-uao"/>
-                            <constraint firstAttribute="trailing" secondItem="rTM-GG-152" secondAttribute="trailing" constant="8" id="lZO-vN-ozZ"/>
-                            <constraint firstItem="rTM-GG-152" firstAttribute="leading" secondItem="Dfa-ri-OBp" secondAttribute="trailing" constant="8" id="zfb-4r-KkE"/>
+                            <constraint firstItem="u8X-U4-BaC" firstAttribute="top" secondItem="kh9-bI-dsS" secondAttribute="top" id="LZz-Ye-WbE"/>
+                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="u8X-U4-BaC" secondAttribute="bottom" id="c3O-NF-F4Z"/>
+                            <constraint firstAttribute="trailing" secondItem="u8X-U4-BaC" secondAttribute="trailing" id="vJH-Yp-B8H"/>
                         </constraints>
-                        <variation key="default">
-                            <mask key="constraints">
-                                <exclude reference="Tlc-te-vDC"/>
-                                <exclude reference="cob-e9-LPN"/>
-                            </mask>
-                        </variation>
                     </view>
                     <navigationItem key="navigationItem" id="nUi-mD-wnC"/>
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
                     <nil key="simulatedTopBarMetrics"/>
+                    <connections>
+                        <outlet property="drawerRightConstraint" destination="vJH-Yp-B8H" id="RJc-9G-qyW"/>
+                        <outlet property="drawerView" destination="u8X-U4-BaC" id="Yee-qT-WJF"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
