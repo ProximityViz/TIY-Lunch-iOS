@@ -22,6 +22,16 @@ class MainMapVC: UIViewController, MKMapViewDelegate, RMMapViewDelegate, CLLocat
     var manager = CLLocationManager()
     var mapboxView = RMMapView()
     
+    var foodShown = true
+    var drinksShown = true
+    var miscShown = true
+    
+    // change to specific type
+    var foodAnnotations = [RMAnnotation]()
+    var drinksAnnotations = [RMAnnotation]()
+    var miscAnnotations = [RMAnnotation]()
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -52,23 +62,17 @@ class MainMapVC: UIViewController, MKMapViewDelegate, RMMapViewDelegate, CLLocat
         var tiyLocation:CLLocationCoordinate2D = CLLocationCoordinate2DMake(33.7518732, -84.3914068)
         var tiyAnnotation = RMAnnotation(mapView: mapboxView, coordinate: tiyLocation, andTitle: "The Iron Yard")
         tiyAnnotation.subtitle = "Life's Too Short for the Wrong Career"
-//        tiyAnnotation.userInfo = "custom icon"
         
         mapboxView.addAnnotation(tiyAnnotation)
         
         var halfAnnotation = RMAnnotation(mapView: mapboxView, coordinate: tiyLocation, andTitle: "Half-mile radius")
         var quarterAnnotation = RMAnnotation(mapView: mapboxView, coordinate: tiyLocation, andTitle: "Quarter-mile radius")
         
-//        var annotations: [RMAnnotation] = [halfAnnotation, quarterAnnotation]
-//        mapboxView.addAnnotations([annotations])
-        mapboxView.addAnnotation(halfAnnotation)
-        mapboxView.addAnnotation(quarterAnnotation)
+        var annotations: [RMAnnotation] = [halfAnnotation, quarterAnnotation]
+        mapboxView.addAnnotations(annotations)
         
-//        view.addSubview(mapboxView)
+        // get drawer to show above map
         view.insertSubview(mapboxView, belowSubview: drawerView)
-        
-            
-//            - (void)insertSubview:(UIView *)view belowSubview:(UIView *)siblingSubview;
         
     }
     
@@ -77,6 +81,29 @@ class MainMapVC: UIViewController, MKMapViewDelegate, RMMapViewDelegate, CLLocat
         
         navigationController?.setNavigationBarHidden(true, animated: false)
     }
+    
+//    func mapView(mapView: MKMapView!, viewForAnnotation annotation: MKAnnotation!) -> MKAnnotationView! {
+//        
+//        
+//        switch annotation.userInfo.objectForKey("Type") as String {
+//            
+//        case "Eating":
+//            if foodShown == false {
+//                return nil
+//            }
+//            markerImage = "restaurant"
+//            markerColor = yellowColor
+//            
+//        case "Drinking":
+//            markerImage = "beer"
+//            markerColor = orangeColor
+//        default:
+//            markerImage = "embassy"
+//            markerColor = redColor
+//            
+//        }
+//        
+//    }
     
     func mapView(mapView: RMMapView!, layerForAnnotation annotation: RMAnnotation!) -> RMMapLayer! {
         
@@ -99,9 +126,7 @@ class MainMapVC: UIViewController, MKMapViewDelegate, RMMapViewDelegate, CLLocat
             
         } else if annotation.title? == "Half-mile radius" {
             
-            // FIXME: change location of halfMile and quarterMile callouts
             var halfMile = RMCircle(view: mapView, radiusInMeters: 805)
-            halfMile.canShowCallout = true
             
             halfMile.fillColor = UIColor.clearColor()
             halfMile.lineColor = greenUIColor
@@ -112,7 +137,6 @@ class MainMapVC: UIViewController, MKMapViewDelegate, RMMapViewDelegate, CLLocat
         } else if annotation.title? == "Quarter-mile radius" {
             
             var quarterMile = RMCircle(view: mapView, radiusInMeters: 402)
-            quarterMile.canShowCallout = true
             
             quarterMile.fillColor = UIColor.clearColor()
             quarterMile.lineColor = greenUIColor
@@ -123,9 +147,6 @@ class MainMapVC: UIViewController, MKMapViewDelegate, RMMapViewDelegate, CLLocat
         } else if annotation.title? == "You Are Here" {
             // TODO: I'd rather have a blue dot
             
-//            var geolocationMarker = RMMarker(mapboxMarkerImage: "embassy", tintColorHex: "#ffffff", sizeString: "large")
-//            geolocationMarker.canShowCallout = true
-            
             return nil
             
         } else { // markers from mapbox data
@@ -135,19 +156,20 @@ class MainMapVC: UIViewController, MKMapViewDelegate, RMMapViewDelegate, CLLocat
             var markerSize = "small"
             var markerColor = greenColor
             
-            // TODO: Refactoring: probably should give annotation.userInfo.objectForKey("Type") a variable name above somewhere. Same with other keys.
             switch annotation.userInfo.objectForKey("Type") as String {
                 
             case "Eating":
                 markerImage = "restaurant"
                 markerColor = yellowColor
+                foodAnnotations.append(annotation)
             case "Drinking":
                 markerImage = "beer"
                 markerColor = orangeColor
+                drinksAnnotations.append(annotation)
             default:
                 markerImage = "embassy"
                 markerColor = redColor
-                
+                miscAnnotations.append(annotation)
             }
             
             switch annotation.userInfo.objectForKey("Count") as String {
@@ -161,23 +183,7 @@ class MainMapVC: UIViewController, MKMapViewDelegate, RMMapViewDelegate, CLLocat
                 
             }
             
-//            println(annotation.description)
-//            println(annotation.userInfo)
-            
-//                {
-//                    Address = "Peachtree and Edgewood";
-//                    Coordinates = "33.7558504,-84.3888957";
-//                    Count = 2;
-//                    Place = "Tin Drum";
-//                    Type = Eating;
-//                    description = "Peachtree and Edgewood";
-//                    id = "marker-i5h0ggxfu";
-//                    "marker-color" = "#d2b42a";
-//                    "marker-size" = "";
-//                    "marker-symbol" = restaurant;
-//                    title = "Tin Drum";
-//            }
-            
+            // marker and callout
             var lunchMarker = RMMarker(mapboxMarkerImage: markerImage, tintColorHex: markerColor, sizeString: markerSize)
             lunchMarker.canShowCallout = true
             
@@ -226,6 +232,7 @@ class MainMapVC: UIViewController, MKMapViewDelegate, RMMapViewDelegate, CLLocat
     
     func mapView(mapView: MKMapView!, didAddAnnotationViews views: [MKAnnotationView]!) {
         
+        // FIXME: Is this even working?
         for view in views {
             
             if view.annotation.title == "You Are Here" {
@@ -256,38 +263,60 @@ class MainMapVC: UIViewController, MKMapViewDelegate, RMMapViewDelegate, CLLocat
     }
     
     @IBAction func tappedFood(sender: AnyObject) {
-        
-        // TODO: add filtering code, which might change if statement to an "if foodIsOn"
-        
-        if foodButton.imageView?.image == UIImage(named: "food yellow") {
+
+        if foodShown == true {
+            
             foodButton.setImage(UIImage(named: "food grey"), forState: .Normal)
+            foodShown = false
+            mapboxView.removeAnnotations(foodAnnotations)
+            
         } else {
+            
             foodButton.setImage(UIImage(named: "food yellow"), forState: .Normal)
+            foodShown = true
+            mapboxView.addAnnotations(foodAnnotations)
+            
         }
         
     }
     
     @IBAction func tappedDrink(sender: AnyObject) {
         
-        if drinksButton.imageView?.image == UIImage(named: "drink orange") {
+        if drinksShown == true {
+            
             drinksButton.setImage(UIImage(named: "drink grey"), forState: .Normal)
+            drinksShown == false
+            mapboxView.removeAnnotations(drinksAnnotations)
+            
         } else {
+            
             drinksButton.setImage(UIImage(named: "drink orange"), forState: .Normal)
+            drinksShown == true
+            mapboxView.addAnnotations(drinksAnnotations)
+            
         }
         
     }
     
     @IBAction func tappedMisc(sender: AnyObject) {
         
-        if miscButton.imageView?.image == UIImage(named: "misc red") {
+        if miscShown == true {
+            
             miscButton.setImage(UIImage(named: "misc grey"), forState: .Normal)
+            miscShown == false
+            mapboxView.removeAnnotations(miscAnnotations)
+            
         } else {
+            
             miscButton.setImage(UIImage(named: "misc red"), forState: .Normal)
+            miscShown == true
+            mapboxView.addAnnotations(miscAnnotations)
+            
         }
         
     }
     
-    
+    // MARK: End
     override func viewWillDisappear(animated: Bool) {
         navigationController?.setNavigationBarHidden(false, animated: false)
         super.viewWillDisappear(false)

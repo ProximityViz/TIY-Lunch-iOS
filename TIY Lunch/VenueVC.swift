@@ -58,7 +58,7 @@ class VenueVC: UIViewController, RMMapViewDelegate, CLLocationManagerDelegate {
         nameLabel.text = venueTitle
         
         // TODO: change address info to what's pulled from Foursquare
-        addressLabel.text = venueInfo.objectForKey("Address") as String
+        addressLabel.text = venueInfo.objectForKey("Address") as? String
         
         
         // annotation.userInfo.objectForKey("Count") as NSString

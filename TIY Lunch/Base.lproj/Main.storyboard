@@ -20,11 +20,11 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="u8X-U4-BaC">
                                 <rect key="frame" x="405" y="0.0" width="195" height="600"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iNR-Bg-C98">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iNR-Bg-C98">
                                         <rect key="frame" x="0.0" y="556" width="60" height="44"/>
                                         <color key="backgroundColor" red="0.0" green="0.64705882349999999" blue="0.69411764710000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="44" id="CuL-pG-jSh"/>
+                                            <constraint firstAttribute="width" constant="60" id="CuL-pG-jSh"/>
                                             <constraint firstAttribute="height" constant="44" id="V6i-Pu-tRg"/>
                                         </constraints>
                                         <state key="normal" title="..." image="drawer pull">
@@ -89,7 +89,7 @@
                                                     <action selector="tappedDrink:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="sA7-VQ-1ZB"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Ip-id-3yo">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Ip-id-3yo">
                                                 <rect key="frame" x="9" y="174" width="44" height="44"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="44" id="PVx-vm-LQo"/>
@@ -148,7 +148,7 @@
                                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="circles" translatesAutoresizingMaskIntoConstraints="NO" id="fx3-NH-wcr">
+                                            <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="circles" translatesAutoresizingMaskIntoConstraints="NO" id="fx3-NH-wcr">
                                                 <rect key="frame" x="8" y="238" width="135" height="135"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <constraints>
@@ -163,7 +163,7 @@
                                             <constraint firstItem="6v7-q3-zSa" firstAttribute="top" secondItem="X1V-2a-ahq" secondAttribute="bottom" constant="8" id="2kr-1m-6ab"/>
                                             <constraint firstAttribute="centerX" secondItem="PEf-r7-3P4" secondAttribute="centerX" id="6L6-hs-cQ1"/>
                                             <constraint firstAttribute="trailing" secondItem="Zbb-Nr-iKT" secondAttribute="trailing" constant="7" id="7Kt-LE-1aW"/>
-                                            <constraint firstItem="3Ip-id-3yo" firstAttribute="top" secondItem="6v7-q3-zSa" secondAttribute="bottom" constant="8" id="7QP-0Z-pMj"/>
+                                            <constraint firstItem="3Ip-id-3yo" firstAttribute="top" secondItem="6v7-q3-zSa" secondAttribute="bottom" constant="7" id="7QP-0Z-pMj"/>
                                             <constraint firstAttribute="trailing" secondItem="Dfa-ri-OBp" secondAttribute="trailing" constant="7" id="7SL-al-Igg"/>
                                             <constraint firstItem="PEf-r7-3P4" firstAttribute="top" secondItem="fx3-NH-wcr" secondAttribute="bottom" constant="8" id="BYa-Ji-RbB"/>
                                             <constraint firstItem="X1V-2a-ahq" firstAttribute="leading" secondItem="CIX-Ja-p5G" secondAttribute="leading" constant="9" id="CDX-E5-CUk"/>
