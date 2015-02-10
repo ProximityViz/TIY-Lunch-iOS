@@ -17,7 +17,7 @@ class VenueVC: UIViewController, RMMapViewDelegate,  CLLocationManagerDelegate {
     
     
     var manager = CLLocationManager()
-    var mapboxView = RMMapView()
+    var mapboxView: RMMapView!
     var foundVenue: [String:AnyObject] = [:]
     var venueID:String = ""
     

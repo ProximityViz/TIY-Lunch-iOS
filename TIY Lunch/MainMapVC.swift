@@ -32,7 +32,7 @@ class MainMapVC: UIViewController, MKMapViewDelegate, RMMapViewDelegate, CLLocat
     @IBOutlet weak var miscButton: UIButton!
     
     var manager = CLLocationManager()
-    var mapboxView = RMMapView()
+    var mapboxView: RMMapView!
     
     var foodShown = true
     var drinksShown = true
