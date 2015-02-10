@@ -22,9 +22,9 @@ class VenueVC: UIViewController, RMMapViewDelegate,  CLLocationManagerDelegate {
     var venueID:String = ""
     
     @IBOutlet weak var nameLabel: UILabel!
-    @IBOutlet weak var addressLabel: UILabel!
     @IBOutlet weak var categoryLabel: UILabel!
     @IBOutlet weak var urlButton: UIButton!
+    @IBOutlet weak var addressButton: UIButton!
     @IBOutlet weak var hoursLabel: UILabel!
     @IBOutlet weak var menuLabel: UILabel!
     @IBOutlet weak var descriptionLabel: UILabel!
@@ -36,23 +36,18 @@ class VenueVC: UIViewController, RMMapViewDelegate,  CLLocationManagerDelegate {
         
         // MARK: Aesthetics
         urlButton.contentHorizontalAlignment = .Left
+        addressButton.contentHorizontalAlignment = .Left
         
         // MARK: Foursquare
         var foursquareID = venueInfo.objectForKey("Foursquare") as? String
         if foursquareID != "" {
             if var venueID:String = foursquareID {
                 venueID = venueInfo.objectForKey?("Foursquare") as String
-                println("running")
-                // probably put FourSquareRequest inside here
                 foundVenue = FourSquareRequest.requestVenueWithID(venueID)
-                println(foundVenue)
             } else {
                 venueID = ""
             }
         }
-        
-//        foundVenue = FourSquareRequest.requestVenueWithID(venueID)
-        println(venueInfo)
         
         // MARK: Geolocation setup
         manager.delegate = self;
@@ -88,7 +83,8 @@ class VenueVC: UIViewController, RMMapViewDelegate,  CLLocationManagerDelegate {
         if foundVenue.count > 0 {
             
             if let location: AnyObject = foundVenue["location"] {
-                addressLabel.text = location["address"] as? String
+                addressButton.setTitleColor(blueUIColor, forState: .Normal)
+                addressButton.setTitle(location["address"] as? String, forState: .Normal)
             }
             
             if let categories: AnyObject = foundVenue["categories"] {
@@ -96,9 +92,6 @@ class VenueVC: UIViewController, RMMapViewDelegate,  CLLocationManagerDelegate {
             }
             
             if let url: AnyObject = foundVenue["url"] {
-                // TODO: change text color to blue
-                
-//                UIApplication.sharedApplication().openURL(NSURL(string:"https://docs.google.com/forms/d/1S7XVU0ePdFFihdAL4NjoJeThoGho0DS84lix__K99JA/viewform")!)
                 urlButton.setTitleColor(blueUIColor, forState: .Normal)
                 urlButton.setTitle(url as? String, forState: .Normal)
             }
@@ -143,8 +136,9 @@ class VenueVC: UIViewController, RMMapViewDelegate,  CLLocationManagerDelegate {
             df.unitStyle = .Full
             distanceLabel.text = df.stringFromDistance(meters)
             
-        } else {
-            addressLabel.text = venueInfo.objectForKey("Address") as? String
+        } else if venueInfo.objectForKey("Address") as? String != "" {
+            addressButton.setTitleColor(blueUIColor, forState: .Normal)
+            addressButton.setTitle(venueInfo.objectForKey("Address") as? String, forState: .Normal)
         }
         
         
@@ -162,6 +156,49 @@ class VenueVC: UIViewController, RMMapViewDelegate,  CLLocationManagerDelegate {
             }
             
         }
+        
+    }
+    
+    @IBAction func addressButtonPressed(sender: AnyObject) {
+        
+        // TODO: Refactor??
+        if foundVenue.count > 0 {
+            
+            if let location: AnyObject = foundVenue["location"] {
+                
+                if let address: [String] = location["formattedAddress"] as? [String] {
+                    
+                    var url: String = ""
+                    
+                    if address[0] != "" {
+                        
+                        if address[1] != "" {
+                            url = "http://maps.apple.com/?q=" + address[0] + ", " + address[1]
+                        } else {
+                            url = "http://maps.apple.com/?q=" + address[0] + ", Atlanta GA"
+                        }
+                        
+                    } else if venueInfo.objectForKey("Address") as? String != "" {
+                        
+                        let address = venueInfo.objectForKey("Address") as String
+                        url = "http://maps.apple.com/?q=" + address + ", Atlanta GA"
+                        
+                    }
+                    
+                    if url != "" {
+                        url = url.stringByAddingPercentEscapesUsingEncoding(NSUTF8StringEncoding)!
+                        UIApplication.sharedApplication().openURL(NSURL(string:url)!)
+                    }
+                    
+                }
+                
+            }
+            
+        }
+        
+        // TODO: Maybe make this work even if the venue isn't found, with the data from the spreadsheet
+        // but make sure it doesn't link if there's no info at all
+        
         
     }
     

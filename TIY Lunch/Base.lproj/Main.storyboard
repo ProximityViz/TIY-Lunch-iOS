@@ -260,15 +260,6 @@
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No Address Listed" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WE3-CX-qku">
-                                <rect key="frame" x="45" y="270" width="539" height="21"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="21" id="Czf-Gm-eTW"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="17"/>
-                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No Hours Listed" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PBQ-db-Bks">
                                 <rect key="frame" x="45" y="328" width="539" height="21"/>
                                 <constraints>
@@ -406,6 +397,27 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mVP-A6-lgt">
+                                <rect key="frame" x="45" y="270" width="539" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="4tM-4b-GCr"/>
+                                    <constraint firstAttribute="width" constant="568" id="9d5-7a-ylO"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="21" id="azq-2F-F89"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="17"/>
+                                <state key="normal" title="No Address Listed">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="9d5-7a-ylO"/>
+                                    </mask>
+                                </variation>
+                                <connections>
+                                    <action selector="addressButtonPressed:" destination="zlO-dB-NL9" eventType="touchUpInside" id="BMT-J9-7KW"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.1176470588" green="0.1176470588" blue="0.1176470588" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -414,22 +426,19 @@
                             <constraint firstAttribute="trailingMargin" secondItem="PBQ-db-Bks" secondAttribute="trailing" id="1va-wQ-5yD"/>
                             <constraint firstItem="Ung-km-GkU" firstAttribute="top" secondItem="eYv-2b-DSw" secondAttribute="top" id="2QX-c4-bZK"/>
                             <constraint firstItem="nNR-PV-wjq" firstAttribute="top" secondItem="ido-ya-Tvt" secondAttribute="top" id="2S1-Mi-AwK"/>
+                            <constraint firstItem="mVP-A6-lgt" firstAttribute="trailing" secondItem="fL4-KP-De3" secondAttribute="trailingMargin" id="8Co-ML-qVM"/>
+                            <constraint firstItem="mVP-A6-lgt" firstAttribute="leading" secondItem="06z-6m-708" secondAttribute="trailing" constant="8" id="AxF-8y-amk"/>
                             <constraint firstItem="PX6-B1-OVN" firstAttribute="top" secondItem="DQB-Si-DS2" secondAttribute="bottom" constant="8" id="Cwd-94-VWc"/>
                             <constraint firstItem="ido-ya-Tvt" firstAttribute="leading" secondItem="nNR-PV-wjq" secondAttribute="trailing" constant="8" id="CxE-Zk-lIJ"/>
                             <constraint firstItem="m3I-hP-faF" firstAttribute="top" secondItem="CZu-Sg-QdV" secondAttribute="bottom" constant="212" id="DWx-2N-qGc"/>
                             <constraint firstItem="PX6-B1-OVN" firstAttribute="leading" secondItem="fL4-KP-De3" secondAttribute="leadingMargin" id="IcZ-Ov-IhP"/>
-                            <constraint firstItem="WE3-CX-qku" firstAttribute="leading" secondItem="06z-6m-708" secondAttribute="trailing" constant="8" id="LD3-w0-eMl"/>
                             <constraint firstItem="PX6-B1-OVN" firstAttribute="top" secondItem="PBQ-db-Bks" secondAttribute="top" id="LP5-i2-5eH"/>
                             <constraint firstItem="Ung-km-GkU" firstAttribute="leading" secondItem="eYv-2b-DSw" secondAttribute="trailing" constant="8" id="Md2-uf-6nG"/>
-                            <constraint firstItem="WE3-CX-qku" firstAttribute="trailing" secondItem="fL4-KP-De3" secondAttribute="trailingMargin" id="NCj-FI-Yyi"/>
-                            <constraint firstItem="WE3-CX-qku" firstAttribute="top" secondItem="06z-6m-708" secondAttribute="top" id="NtA-As-402"/>
                             <constraint firstItem="nNR-PV-wjq" firstAttribute="leading" secondItem="fL4-KP-De3" secondAttribute="leadingMargin" id="NyN-Jn-Sgl"/>
                             <constraint firstItem="eeb-Dm-oMK" firstAttribute="leading" secondItem="DQB-Si-DS2" secondAttribute="trailing" constant="8" id="PGB-mM-mfp"/>
                             <constraint firstItem="eeb-Dm-oMK" firstAttribute="leading" secondItem="DQB-Si-DS2" secondAttribute="trailing" constant="29" id="THv-1T-20z"/>
-                            <constraint firstItem="WE3-CX-qku" firstAttribute="leading" secondItem="06z-6m-708" secondAttribute="trailing" constant="29" id="V2a-a6-D5q"/>
                             <constraint firstItem="DQB-Si-DS2" firstAttribute="top" secondItem="06z-6m-708" secondAttribute="bottom" constant="8" id="Wk8-kO-hDp"/>
                             <constraint firstItem="ido-ya-Tvt" firstAttribute="leading" secondItem="nNR-PV-wjq" secondAttribute="trailing" constant="29" id="Yje-5i-ef0"/>
-                            <constraint firstItem="WE3-CX-qku" firstAttribute="leading" secondItem="06z-6m-708" secondAttribute="trailing" constant="8" id="Ysm-Kc-9RQ"/>
                             <constraint firstItem="nNR-PV-wjq" firstAttribute="top" secondItem="PX6-B1-OVN" secondAttribute="bottom" constant="8" id="ZC2-ez-e27"/>
                             <constraint firstItem="eYv-2b-DSw" firstAttribute="top" secondItem="nNR-PV-wjq" secondAttribute="bottom" constant="8" id="ZVB-St-Xuu"/>
                             <constraint firstItem="m3I-hP-faF" firstAttribute="leading" secondItem="fL4-KP-De3" secondAttribute="leadingMargin" id="aDU-5W-0IJ"/>
@@ -448,11 +457,10 @@
                             <constraint firstItem="bBg-gj-qYa" firstAttribute="top" secondItem="m3I-hP-faF" secondAttribute="bottom" constant="8" id="pfY-sg-Fjl"/>
                             <constraint firstItem="Ung-km-GkU" firstAttribute="trailing" secondItem="fL4-KP-De3" secondAttribute="trailingMargin" id="qu4-qh-cWs"/>
                             <constraint firstItem="DQB-Si-DS2" firstAttribute="leading" secondItem="fL4-KP-De3" secondAttribute="leadingMargin" id="wCt-J8-wLn"/>
+                            <constraint firstItem="eeb-Dm-oMK" firstAttribute="top" secondItem="mVP-A6-lgt" secondAttribute="bottom" constant="8" id="ywo-Zv-UKG"/>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
-                                <exclude reference="V2a-a6-D5q"/>
-                                <exclude reference="Ysm-Kc-9RQ"/>
                                 <exclude reference="THv-1T-20z"/>
                                 <exclude reference="b1k-CM-PSm"/>
                                 <exclude reference="c3h-U2-sFa"/>
@@ -462,7 +470,7 @@
                     </view>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" barStyle="black" translucent="NO" prompted="NO"/>
                     <connections>
-                        <outlet property="addressLabel" destination="WE3-CX-qku" id="qqc-A8-6cN"/>
+                        <outlet property="addressButton" destination="mVP-A6-lgt" id="Kbg-2c-olW"/>
                         <outlet property="categoryLabel" destination="TtY-NE-2bb" id="oGz-Vq-f5d"/>
                         <outlet property="distanceLabel" destination="Ung-km-GkU" id="xOg-MQ-kPJ"/>
                         <outlet property="hoursLabel" destination="PBQ-db-Bks" id="scv-D9-b13"/>
