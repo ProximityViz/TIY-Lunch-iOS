@@ -15,10 +15,10 @@ import UIKit
     @IBInspectable var isRounded: Bool = false
     @IBInspectable var isReversed: Bool = false
     
-    @IBInspectable var topInset: CGFloat = 5
-    @IBInspectable var bottomInset: CGFloat = 5
-    @IBInspectable var leftInset: CGFloat = 8
-    @IBInspectable var rightInset: CGFloat = 8
+    @IBInspectable var topInset: CGFloat = 16
+    @IBInspectable var bottomInset: CGFloat = 16
+    @IBInspectable var leftInset: CGFloat = 7
+    @IBInspectable var rightInset: CGFloat = 15
 
     override func drawRect(rect: CGRect) {
         
