@@ -23,7 +23,7 @@ import UIKit
     override func drawRect(rect: CGRect) {
         
         // 22x22
-        var context = UIGraphicsGetCurrentContext()
+        let context = UIGraphicsGetCurrentContext()
         
         strokeColor.set()
         

@@ -19,7 +19,6 @@
 		EC825AD01A7683440042FF88 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC825ACF1A7683440042FF88 /* CoreLocation.framework */; };
 		EC825AD21A7683490042FF88 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC825AD11A7683490042FF88 /* MapKit.framework */; };
 		EC825AD51A7683F20042FF88 /* MainMapVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC825AD41A7683F20042FF88 /* MainMapVC.swift */; };
-		EC825AD71A7684A80042FF88 /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC825AD61A7684A80042FF88 /* Data.swift */; };
 		EC8993BC1A8C15E000AC8096 /* PassthroughView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC8993BB1A8C15E000AC8096 /* PassthroughView.swift */; };
 		ECE49D551A851180001A70C2 /* ArrowButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECE49D541A851180001A70C2 /* ArrowButton.swift */; };
 		ECE49D5A1A853844001A70C2 /* VenueVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECE49D591A853844001A70C2 /* VenueVC.swift */; };
@@ -111,7 +110,6 @@
 		EC825ACF1A7683440042FF88 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		EC825AD11A7683490042FF88 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		EC825AD41A7683F20042FF88 /* MainMapVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainMapVC.swift; sourceTree = "<group>"; };
-		EC825AD61A7684A80042FF88 /* Data.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
 		EC8993BB1A8C15E000AC8096 /* PassthroughView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PassthroughView.swift; sourceTree = "<group>"; };
 		ECE49D541A851180001A70C2 /* ArrowButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArrowButton.swift; sourceTree = "<group>"; };
 		ECE49D591A853844001A70C2 /* VenueVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VenueVC.swift; sourceTree = "<group>"; };
@@ -241,7 +239,6 @@
 				ECE49D561A851189001A70C2 /* IBViews */,
 				ECE49D5B1A87B78B001A70C2 /* Models */,
 				EC18089A1A795EBE00658D67 /* TIY Lunch-Bridging-Header.h */,
-				EC825AD61A7684A80042FF88 /* Data.swift */,
 				EC825AAF1A7683330042FF88 /* AppDelegate.swift */,
 				EC825AD41A7683F20042FF88 /* MainMapVC.swift */,
 				EC8993BB1A8C15E000AC8096 /* PassthroughView.swift */,
@@ -429,7 +426,6 @@
 				ECE49D5D1A87B798001A70C2 /* FourSquareRequest.swift in Sources */,
 				ECE49D5A1A853844001A70C2 /* VenueVC.swift in Sources */,
 				EC825AD51A7683F20042FF88 /* MainMapVC.swift in Sources */,
-				EC825AD71A7684A80042FF88 /* Data.swift in Sources */,
 				EC8993BC1A8C15E000AC8096 /* PassthroughView.swift in Sources */,
 				EC825AB01A7683330042FF88 /* AppDelegate.swift in Sources */,
 				ECE49D551A851180001A70C2 /* ArrowButton.swift in Sources */,

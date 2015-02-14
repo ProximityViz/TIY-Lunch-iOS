@@ -294,7 +294,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="11" translatesAutoresizingMaskIntoConstraints="NO" id="m3I-hP-faF">
-                                <rect key="frame" x="16" y="321" width="478" height="21"/>
+                                <rect key="frame" x="16" y="321" width="568" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="bOz-1w-f2F"/>
                                 </constraints>
@@ -338,7 +338,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No Price Tier Listed" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="ido-ya-Tvt">
-                                <rect key="frame" x="45" y="466" width="539" height="21"/>
+                                <rect key="frame" x="45" y="466" width="379" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="Dc5-NR-B6C"/>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="21" id="vHC-xF-0Tc"/>
@@ -355,7 +355,7 @@
                                 </variation>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No Category Listed" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="TtY-NE-2bb">
-                                <rect key="frame" x="45" y="350" width="449" height="21"/>
+                                <rect key="frame" x="45" y="350" width="539" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="qef-gq-QAt"/>
                                 </constraints>
@@ -404,7 +404,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Distance Unknown" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="Ung-km-GkU">
-                                <rect key="frame" x="45" y="495" width="539" height="21"/>
+                                <rect key="frame" x="45" y="495" width="379" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" relation="lessThanOrEqual" constant="21" id="46I-DY-aLN"/>
                                     <constraint firstAttribute="height" constant="21" id="dLl-ha-B3h"/>
@@ -460,12 +460,12 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jyh-bX-UzT">
-                                <rect key="frame" x="502" y="310" width="90" height="44"/>
+                                <rect key="frame" x="432" y="487" width="160" height="44"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="hyd-PV-cai"/>
-                                    <constraint firstAttribute="width" constant="90" id="n8q-Ks-RsL"/>
+                                    <constraint firstAttribute="width" constant="160" id="n8q-Ks-RsL"/>
                                 </constraints>
-                                <state key="normal">
+                                <state key="normal" backgroundImage="powered-by-foursquare">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -480,10 +480,11 @@
                             <constraint firstItem="eeb-Dm-oMK" firstAttribute="leading" secondItem="DQB-Si-DS2" secondAttribute="trailing" constant="8" id="5jJ-rh-cXc"/>
                             <constraint firstItem="jyh-bX-UzT" firstAttribute="leading" secondItem="m3I-hP-faF" secondAttribute="trailing" constant="278" id="6gA-Fk-sR0"/>
                             <constraint firstItem="m3I-hP-faF" firstAttribute="trailing" secondItem="fL4-KP-De3" secondAttribute="trailingMargin" id="8wi-gZ-4QJ"/>
-                            <constraint firstAttribute="bottomMargin" secondItem="jyh-bX-UzT" secondAttribute="bottom" constant="182" id="Bsr-39-aGP"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="jyh-bX-UzT" secondAttribute="bottom" constant="5" id="Bsr-39-aGP"/>
                             <constraint firstItem="eYv-2b-DSw" firstAttribute="top" secondItem="nNR-PV-wjq" secondAttribute="bottom" constant="8" id="EKY-nX-ELH"/>
                             <constraint firstItem="PX6-B1-OVN" firstAttribute="top" secondItem="DQB-Si-DS2" secondAttribute="bottom" constant="8" id="Em4-lb-dlP"/>
                             <constraint firstItem="nNR-PV-wjq" firstAttribute="top" secondItem="PX6-B1-OVN" secondAttribute="bottom" constant="8" id="F5Z-t1-LEI"/>
+                            <constraint firstItem="m3I-hP-faF" firstAttribute="trailing" secondItem="fL4-KP-De3" secondAttribute="trailingMargin" id="FpA-4I-76x"/>
                             <constraint firstItem="uYu-FX-WvU" firstAttribute="top" secondItem="eYv-2b-DSw" secondAttribute="bottom" constant="20" id="LMa-zG-bxS"/>
                             <constraint firstItem="Ung-km-GkU" firstAttribute="leading" secondItem="eYv-2b-DSw" secondAttribute="trailing" constant="8" id="LTk-0Y-DsG"/>
                             <constraint firstItem="PBQ-db-Bks" firstAttribute="leading" secondItem="PX6-B1-OVN" secondAttribute="trailing" constant="8" id="M9r-gh-TPX"/>
@@ -493,6 +494,7 @@
                             <constraint firstItem="TtY-NE-2bb" firstAttribute="leading" secondItem="bBg-gj-qYa" secondAttribute="trailing" constant="8" id="OLx-Du-Lcb"/>
                             <constraint firstItem="PBQ-db-Bks" firstAttribute="trailing" secondItem="fL4-KP-De3" secondAttribute="trailingMargin" id="Pp7-aw-O9b"/>
                             <constraint firstItem="eeb-Dm-oMK" firstAttribute="leading" secondItem="DQB-Si-DS2" secondAttribute="trailing" constant="29" id="THv-1T-20z"/>
+                            <constraint firstItem="jyh-bX-UzT" firstAttribute="leading" secondItem="Ung-km-GkU" secondAttribute="trailing" constant="8" id="TbP-9B-eqr"/>
                             <constraint firstItem="Ung-km-GkU" firstAttribute="trailing" secondItem="fL4-KP-De3" secondAttribute="trailingMargin" id="UMz-kf-sv6"/>
                             <constraint firstItem="jyh-bX-UzT" firstAttribute="leading" secondItem="TtY-NE-2bb" secondAttribute="trailing" constant="278" id="VCv-TV-NPQ"/>
                             <constraint firstItem="mVP-A6-lgt" firstAttribute="top" secondItem="TtY-NE-2bb" secondAttribute="bottom" constant="8" id="VRJ-TP-OeX"/>
@@ -509,7 +511,9 @@
                             <constraint firstItem="mVP-A6-lgt" firstAttribute="trailing" secondItem="fL4-KP-De3" secondAttribute="trailingMargin" id="guG-4x-N0C"/>
                             <constraint firstItem="ido-ya-Tvt" firstAttribute="top" secondItem="PBQ-db-Bks" secondAttribute="bottom" constant="8" id="gvQ-33-MVC"/>
                             <constraint firstItem="mVP-A6-lgt" firstAttribute="leading" secondItem="06z-6m-708" secondAttribute="trailing" constant="8" id="hp0-Yy-T1e"/>
+                            <constraint firstItem="jyh-bX-UzT" firstAttribute="leading" secondItem="ido-ya-Tvt" secondAttribute="trailing" constant="8" id="jzb-vG-OPU"/>
                             <constraint firstItem="bBg-gj-qYa" firstAttribute="leading" secondItem="fL4-KP-De3" secondAttribute="leadingMargin" id="lJ7-Vz-fWU"/>
+                            <constraint firstItem="TtY-NE-2bb" firstAttribute="trailing" secondItem="fL4-KP-De3" secondAttribute="trailingMargin" id="lwh-Ez-e9K"/>
                             <constraint firstItem="06z-6m-708" firstAttribute="leading" secondItem="fL4-KP-De3" secondAttribute="leadingMargin" id="qCf-Sy-nU7"/>
                             <constraint firstItem="PX6-B1-OVN" firstAttribute="leading" secondItem="fL4-KP-De3" secondAttribute="leadingMargin" id="qhW-3v-lcy"/>
                             <constraint firstItem="ido-ya-Tvt" firstAttribute="trailing" secondItem="fL4-KP-De3" secondAttribute="trailingMargin" id="r2d-JJ-MLv"/>
@@ -527,8 +531,12 @@
                                 <exclude reference="b1k-CM-PSm"/>
                                 <exclude reference="c3h-U2-sFa"/>
                                 <exclude reference="Yje-5i-ef0"/>
+                                <exclude reference="r2d-JJ-MLv"/>
+                                <exclude reference="UMz-kf-sv6"/>
+                                <exclude reference="0SJ-Ku-j2s"/>
                                 <exclude reference="6gA-Fk-sR0"/>
                                 <exclude reference="VCv-TV-NPQ"/>
+                                <exclude reference="vdZ-jH-AJa"/>
                             </mask>
                         </variation>
                     </view>
@@ -580,5 +588,6 @@
         <image name="drink orange" width="44" height="44"/>
         <image name="food yellow" width="44" height="44"/>
         <image name="misc red" width="44" height="44"/>
+        <image name="powered-by-foursquare" width="300" height="88"/>
     </resources>
 </document>

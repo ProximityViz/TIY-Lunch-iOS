@@ -62,10 +62,10 @@ class MainMapVC: UIViewController, MKMapViewDelegate, RMMapViewDelegate, CLLocat
         // MARK: Mapbox
         RMConfiguration().accessToken = "pk.eyJ1IjoibW9sbGllIiwiYSI6IjdoX1Z4d0EifQ.hXHw5tonOOCDlvh3oKQNXA"
         
-        var mapboxFrame = CGRectMake(0, 20, view.bounds.width, (view.bounds.height - 20))
-        var mapboxTiles = RMMapboxSource(mapID: "mollie.l2ibmbpc")
+        let mapboxFrame = CGRectMake(0, 20, view.bounds.width, (view.bounds.height - 20))
+        let mapboxTiles = RMMapboxSource(mapID: "mollie.l2ibmbpc")
         mapboxView = RMMapView(frame: mapboxFrame, andTilesource: mapboxTiles)
-        var mapboxSource = RMMapboxSource(mapID: "mollie.l2ibmbpc", enablingDataOnMapView: mapboxView)
+        let mapboxSource = RMMapboxSource(mapID: "mollie.l2ibmbpc", enablingDataOnMapView: mapboxView)
         mapboxView.delegate = self
         
         mapboxView.tileSource.cacheable = true
@@ -74,17 +74,17 @@ class MainMapVC: UIViewController, MKMapViewDelegate, RMMapViewDelegate, CLLocat
         mapboxView.adjustTilesForRetinaDisplay = true
         mapboxView.userInteractionEnabled = true
         
-        var tiyLocation:CLLocationCoordinate2D = CLLocationCoordinate2DMake(33.7518732, -84.3914068)
-        var tiyAnnotation = RMAnnotation(mapView: mapboxView, coordinate: tiyLocation, andTitle: "The Iron Yard")
+        let tiyLocation:CLLocationCoordinate2D = CLLocationCoordinate2DMake(33.7518732, -84.3914068)
+        let tiyAnnotation = RMAnnotation(mapView: mapboxView, coordinate: tiyLocation, andTitle: "The Iron Yard")
         tiyAnnotation.subtitle = "Life's Too Short for the Wrong Career"
         
         mapboxView.addAnnotation(tiyAnnotation)
         
-        var halfAnnotation = RMAnnotation(mapView: mapboxView, coordinate: tiyLocation, andTitle: "Half-mile radius")
-        var quarterAnnotation = RMAnnotation(mapView: mapboxView, coordinate: tiyLocation, andTitle: "Quarter-mile radius")
+        let halfAnnotation = RMAnnotation(mapView: mapboxView, coordinate: tiyLocation, andTitle: "Half-mile radius")
+        let quarterAnnotation = RMAnnotation(mapView: mapboxView, coordinate: tiyLocation, andTitle: "Quarter-mile radius")
         
-        var annotations: [RMAnnotation] = [halfAnnotation, quarterAnnotation]
-        mapboxView.addAnnotations(annotations)
+        let circleAnnotations: [RMAnnotation] = [halfAnnotation, quarterAnnotation]
+        mapboxView.addAnnotations(circleAnnotations)
         
         // get drawer to show above map
         view.insertSubview(mapboxView, belowSubview: drawerView)
@@ -195,7 +195,7 @@ class MainMapVC: UIViewController, MKMapViewDelegate, RMMapViewDelegate, CLLocat
     
     func tapOnCalloutAccessoryControl(control: UIControl!, forAnnotation annotation: RMAnnotation!, onMap map: RMMapView!) {
         
-        var venueVC = storyboard?.instantiateViewControllerWithIdentifier("venueVC") as UIViewController
+        let venueVC = storyboard?.instantiateViewControllerWithIdentifier("venueVC") as UIViewController
         
         venueTitle = annotation.title
         venueCoord = annotation.coordinate
@@ -231,7 +231,7 @@ class MainMapVC: UIViewController, MKMapViewDelegate, RMMapViewDelegate, CLLocat
     // MARK: Geolocation
     func locationManager(manager: CLLocationManager!, didUpdateLocations locations: [AnyObject]!) {
         
-        var userLocation = locations.last as CLLocation
+        let userLocation = locations.last as CLLocation
         
         mapboxView.showsUserLocation = true
         mapboxView.userLocationVisible

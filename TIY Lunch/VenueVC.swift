@@ -66,8 +66,8 @@ class VenueVC: UIViewController, RMMapViewDelegate, CLLocationManagerDelegate {
         // MARK: Mapbox
         RMConfiguration().accessToken = "pk.eyJ1IjoibW9sbGllIiwiYSI6IjdoX1Z4d0EifQ.hXHw5tonOOCDlvh3oKQNXA"
         
-        var mapboxFrame = CGRectMake(0, 0, view.bounds.width, view.bounds.height - 295)
-        var mapboxTiles = RMMapboxSource(mapID: "mollie.l5ldhf1o")
+        let mapboxFrame = CGRectMake(0, 0, view.bounds.width, view.bounds.height - 295)
+        let mapboxTiles = RMMapboxSource(mapID: "mollie.l5ldhf1o")
         mapboxView = RMMapView(frame: mapboxFrame, andTilesource: mapboxTiles)
         mapboxView.delegate = self
         
@@ -141,7 +141,7 @@ class VenueVC: UIViewController, RMMapViewDelegate, CLLocationManagerDelegate {
                 
             }
             
-            foursquareButton.setBackgroundImage(UIImage(named: "foursquare-wordmark"), forState: .Normal)
+            foursquareButton.setBackgroundImage(UIImage(named: "powered-by-foursquare"), forState: .Normal)
             
         } else if venueInfo.objectForKey("Address") as? String != "" {
             addressButton.setTitleColor(blueUIColor, forState: .Normal)
@@ -170,7 +170,7 @@ class VenueVC: UIViewController, RMMapViewDelegate, CLLocationManagerDelegate {
         
         if annotations.count > 0 {
             
-            if var firstCoordinate = annotations.first?.coordinate {
+            if let firstCoordinate = annotations.first?.coordinate {
             
                 var neLat = CGFloat(firstCoordinate.latitude)
                 var neLon = CGFloat(firstCoordinate.longitude)
@@ -188,14 +188,14 @@ class VenueVC: UIViewController, RMMapViewDelegate, CLLocationManagerDelegate {
                     
                 }
                 
-                var verticalMarginPixels = 80 as CGFloat
-                var horizontalMarginPixels = 40 as CGFloat
+                let verticalMarginPixels = 80 as CGFloat
+                let horizontalMarginPixels = 40 as CGFloat
                 
-                var verticalMarginPercent = verticalMarginPixels / mapboxView.bounds.height
-                var horizontalMarginPercent = horizontalMarginPixels / mapboxView.bounds.width
+                let verticalMarginPercent = verticalMarginPixels / mapboxView.bounds.height
+                let horizontalMarginPercent = horizontalMarginPixels / mapboxView.bounds.width
                 
-                var verticalMargin = (neLat - swLat) * verticalMarginPercent
-                var horizontalMargin = (neLon - swLon) * horizontalMarginPercent
+                let verticalMargin = (neLat - swLat) * verticalMarginPercent
+                let horizontalMargin = (neLon - swLon) * horizontalMarginPercent
                 
                 swLat -= verticalMargin
                 swLon -= horizontalMargin
@@ -315,7 +315,7 @@ class VenueVC: UIViewController, RMMapViewDelegate, CLLocationManagerDelegate {
                 markerColor = redColor
             }
             
-            var venueMarker = RMMarker(mapboxMarkerImage: markerImage, tintColorHex: markerColor, sizeString: "medium")
+            let venueMarker = RMMarker(mapboxMarkerImage: markerImage, tintColorHex: markerColor, sizeString: "medium")
             return venueMarker
             
         }
@@ -323,9 +323,10 @@ class VenueVC: UIViewController, RMMapViewDelegate, CLLocationManagerDelegate {
     }
     
     // MARK: Geolocation
+    // FIXME: This is duplicated?
     func locationManager(manager: CLLocationManager!, didUpdateLocations locations: [AnyObject]!) {
         
-        var userLocation = locations.last as CLLocation
+        let userLocation = locations.last as CLLocation
         
         mapboxView.showsUserLocation = true
         mapboxView.userLocationVisible
