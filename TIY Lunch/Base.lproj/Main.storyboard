@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="w2K-2m-Fcd">
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
@@ -17,7 +18,7 @@
         <!--Main MapVC-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
-                <viewController id="vXZ-lx-hvc" customClass="MainMapVC" customModule="TIY_Lunch" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="vXZ-lx-hvc" customClass="MainMapVC" customModule="The_Iron_Yard_ATL_Lunch" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
                         <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
@@ -26,7 +27,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="u8X-U4-BaC" customClass="PassthroughView" customModule="TIY_Lunch" customModuleProvider="target">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="u8X-U4-BaC" customClass="PassthroughView" customModule="The_Iron_Yard_ATL_Lunch" customModuleProvider="target">
                                 <rect key="frame" x="405" y="0.0" width="195" height="600"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CIX-Ja-p5G">
@@ -284,7 +285,7 @@
         <!--VenueVC-->
         <scene sceneID="Ilg-QT-gDK">
             <objects>
-                <viewController storyboardIdentifier="venueVC" id="zlO-dB-NL9" customClass="VenueVC" customModule="TIY_Lunch" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="venueVC" id="zlO-dB-NL9" customClass="VenueVC" customModule="The_Iron_Yard_ATL_Lunch" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="CZu-Sg-QdV"/>
                         <viewControllerLayoutGuide type="bottom" id="uYu-FX-WvU"/>

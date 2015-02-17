@@ -15,7 +15,6 @@
 		EC825AB51A7683330042FF88 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EC825AB31A7683330042FF88 /* Main.storyboard */; };
 		EC825AB71A7683330042FF88 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EC825AB61A7683330042FF88 /* Images.xcassets */; };
 		EC825ABA1A7683340042FF88 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = EC825AB81A7683340042FF88 /* LaunchScreen.xib */; };
-		EC825AC61A7683340042FF88 /* TIY_LunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC825AC51A7683340042FF88 /* TIY_LunchTests.swift */; };
 		EC825AD01A7683440042FF88 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC825ACF1A7683440042FF88 /* CoreLocation.framework */; };
 		EC825AD21A7683490042FF88 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC825AD11A7683490042FF88 /* MapKit.framework */; };
 		EC825AD51A7683F20042FF88 /* MainMapVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC825AD41A7683F20042FF88 /* MainMapVC.swift */; };
@@ -98,13 +97,13 @@
 		EC1808961A795E9700658D67 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
 		EC1808971A795E9700658D67 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		EC18089A1A795EBE00658D67 /* TIY Lunch-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TIY Lunch-Bridging-Header.h"; sourceTree = SOURCE_ROOT; };
-		EC825AAA1A7683330042FF88 /* TIY Lunch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "TIY Lunch.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		EC825AAA1A7683330042FF88 /* The Iron Yard ATL Lunch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "The Iron Yard ATL Lunch.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EC825AAE1A7683330042FF88 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EC825AAF1A7683330042FF88 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EC825AB41A7683330042FF88 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		EC825AB61A7683330042FF88 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		EC825AB91A7683340042FF88 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
-		EC825ABF1A7683340042FF88 /* TIY LunchTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "TIY LunchTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		EC825ABF1A7683340042FF88 /* The Iron Yard ATL LunchTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "The Iron Yard ATL LunchTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EC825AC41A7683340042FF88 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EC825AC51A7683340042FF88 /* TIY_LunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TIY_LunchTests.swift; sourceTree = "<group>"; };
 		EC825ACF1A7683440042FF88 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
@@ -227,8 +226,8 @@
 		EC825AAB1A7683330042FF88 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				EC825AAA1A7683330042FF88 /* TIY Lunch.app */,
-				EC825ABF1A7683340042FF88 /* TIY LunchTests.xctest */,
+				EC825AAA1A7683330042FF88 /* The Iron Yard ATL Lunch.app */,
+				EC825ABF1A7683340042FF88 /* The Iron Yard ATL LunchTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -307,9 +306,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		EC825AA91A7683330042FF88 /* TIY Lunch */ = {
+		EC825AA91A7683330042FF88 /* The Iron Yard ATL Lunch */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = EC825AC91A7683340042FF88 /* Build configuration list for PBXNativeTarget "TIY Lunch" */;
+			buildConfigurationList = EC825AC91A7683340042FF88 /* Build configuration list for PBXNativeTarget "The Iron Yard ATL Lunch" */;
 			buildPhases = (
 				EC825AA61A7683330042FF88 /* Sources */,
 				EC825AA71A7683330042FF88 /* Frameworks */,
@@ -320,14 +319,14 @@
 			);
 			dependencies = (
 			);
-			name = "TIY Lunch";
+			name = "The Iron Yard ATL Lunch";
 			productName = "TIY Lunch";
-			productReference = EC825AAA1A7683330042FF88 /* TIY Lunch.app */;
+			productReference = EC825AAA1A7683330042FF88 /* The Iron Yard ATL Lunch.app */;
 			productType = "com.apple.product-type.application";
 		};
-		EC825ABE1A7683340042FF88 /* TIY LunchTests */ = {
+		EC825ABE1A7683340042FF88 /* The Iron Yard ATL LunchTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = EC825ACC1A7683340042FF88 /* Build configuration list for PBXNativeTarget "TIY LunchTests" */;
+			buildConfigurationList = EC825ACC1A7683340042FF88 /* Build configuration list for PBXNativeTarget "The Iron Yard ATL LunchTests" */;
 			buildPhases = (
 				EC825ABB1A7683340042FF88 /* Sources */,
 				EC825ABC1A7683340042FF88 /* Frameworks */,
@@ -338,9 +337,9 @@
 			dependencies = (
 				EC825AC11A7683340042FF88 /* PBXTargetDependency */,
 			);
-			name = "TIY LunchTests";
+			name = "The Iron Yard ATL LunchTests";
 			productName = "TIY LunchTests";
-			productReference = EC825ABF1A7683340042FF88 /* TIY LunchTests.xctest */;
+			productReference = EC825ABF1A7683340042FF88 /* The Iron Yard ATL LunchTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -361,7 +360,7 @@
 					};
 				};
 			};
-			buildConfigurationList = EC825AA51A7683330042FF88 /* Build configuration list for PBXProject "TIY Lunch" */;
+			buildConfigurationList = EC825AA51A7683330042FF88 /* Build configuration list for PBXProject "The Iron Yard ATL Lunch" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -374,8 +373,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				EC825AA91A7683330042FF88 /* TIY Lunch */,
-				EC825ABE1A7683340042FF88 /* TIY LunchTests */,
+				EC825AA91A7683330042FF88 /* The Iron Yard ATL Lunch */,
+				EC825ABE1A7683340042FF88 /* The Iron Yard ATL LunchTests */,
 			);
 		};
 /* End PBXProject section */
@@ -436,7 +435,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EC825AC61A7683340042FF88 /* TIY_LunchTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -445,7 +443,7 @@
 /* Begin PBXTargetDependency section */
 		EC825AC11A7683340042FF88 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = EC825AA91A7683330042FF88 /* TIY Lunch */;
+			target = EC825AA91A7683330042FF88 /* The Iron Yard ATL Lunch */;
 			targetProxy = EC825AC01A7683340042FF88 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -560,7 +558,7 @@
 					"$(PROJECT_DIR)/Mapbox-iOS-SDK-1.5.0",
 					"$(PROJECT_DIR)/Mapbox-iOS-SDK-1.6.0",
 				);
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "The Iron Yard ATL Lunch";
 				SWIFT_OBJC_BRIDGING_HEADER = "TIY Lunch-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
@@ -579,7 +577,7 @@
 					"$(PROJECT_DIR)/Mapbox-iOS-SDK-1.5.0",
 					"$(PROJECT_DIR)/Mapbox-iOS-SDK-1.6.0",
 				);
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "The Iron Yard ATL Lunch";
 				SWIFT_OBJC_BRIDGING_HEADER = "TIY Lunch-Bridging-Header.h";
 			};
 			name = Release;
@@ -598,7 +596,7 @@
 				);
 				INFOPLIST_FILE = "TIY LunchTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "The Iron Yard ATL LunchTests";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TIY Lunch.app/TIY Lunch";
 			};
 			name = Debug;
@@ -613,7 +611,7 @@
 				);
 				INFOPLIST_FILE = "TIY LunchTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "The Iron Yard ATL LunchTests";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TIY Lunch.app/TIY Lunch";
 			};
 			name = Release;
@@ -621,7 +619,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		EC825AA51A7683330042FF88 /* Build configuration list for PBXProject "TIY Lunch" */ = {
+		EC825AA51A7683330042FF88 /* Build configuration list for PBXProject "The Iron Yard ATL Lunch" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				EC825AC71A7683340042FF88 /* Debug */,
@@ -630,7 +628,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		EC825AC91A7683340042FF88 /* Build configuration list for PBXNativeTarget "TIY Lunch" */ = {
+		EC825AC91A7683340042FF88 /* Build configuration list for PBXNativeTarget "The Iron Yard ATL Lunch" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				EC825ACA1A7683340042FF88 /* Debug */,
@@ -639,7 +637,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		EC825ACC1A7683340042FF88 /* Build configuration list for PBXNativeTarget "TIY LunchTests" */ = {
+		EC825ACC1A7683340042FF88 /* Build configuration list for PBXNativeTarget "The Iron Yard ATL LunchTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				EC825ACD1A7683340042FF88 /* Debug */,

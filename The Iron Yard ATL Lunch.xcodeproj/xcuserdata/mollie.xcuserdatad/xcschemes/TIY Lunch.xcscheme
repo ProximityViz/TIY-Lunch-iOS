@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "EC825AA91A7683330042FF88"
-               BuildableName = "TIY Lunch.app"
-               BlueprintName = "TIY Lunch"
-               ReferencedContainer = "container:TIY Lunch.xcodeproj">
+               BuildableName = "The Iron Yard ATL Lunch.app"
+               BlueprintName = "The Iron Yard ATL Lunch"
+               ReferencedContainer = "container:The Iron Yard ATL Lunch.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
          <BuildActionEntry
@@ -29,9 +29,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "EC825ABE1A7683340042FF88"
-               BuildableName = "TIY LunchTests.xctest"
-               BlueprintName = "TIY LunchTests"
-               ReferencedContainer = "container:TIY Lunch.xcodeproj">
+               BuildableName = "The Iron Yard ATL LunchTests.xctest"
+               BlueprintName = "The Iron Yard ATL LunchTests"
+               ReferencedContainer = "container:The Iron Yard ATL Lunch.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -47,9 +47,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "EC825ABE1A7683340042FF88"
-               BuildableName = "TIY LunchTests.xctest"
-               BlueprintName = "TIY LunchTests"
-               ReferencedContainer = "container:TIY Lunch.xcodeproj">
+               BuildableName = "The Iron Yard ATL LunchTests.xctest"
+               BlueprintName = "The Iron Yard ATL LunchTests"
+               ReferencedContainer = "container:The Iron Yard ATL Lunch.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -57,9 +57,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "EC825AA91A7683330042FF88"
-            BuildableName = "TIY Lunch.app"
-            BlueprintName = "TIY Lunch"
-            ReferencedContainer = "container:TIY Lunch.xcodeproj">
+            BuildableName = "The Iron Yard ATL Lunch.app"
+            BlueprintName = "The Iron Yard ATL Lunch"
+            ReferencedContainer = "container:The Iron Yard ATL Lunch.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </TestAction>
@@ -76,9 +76,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "EC825AA91A7683330042FF88"
-            BuildableName = "TIY Lunch.app"
-            BlueprintName = "TIY Lunch"
-            ReferencedContainer = "container:TIY Lunch.xcodeproj">
+            BuildableName = "The Iron Yard ATL Lunch.app"
+            BlueprintName = "The Iron Yard ATL Lunch"
+            ReferencedContainer = "container:The Iron Yard ATL Lunch.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -94,9 +94,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "EC825AA91A7683330042FF88"
-            BuildableName = "TIY Lunch.app"
-            BlueprintName = "TIY Lunch"
-            ReferencedContainer = "container:TIY Lunch.xcodeproj">
+            BuildableName = "The Iron Yard ATL Lunch.app"
+            BlueprintName = "The Iron Yard ATL Lunch"
+            ReferencedContainer = "container:The Iron Yard ATL Lunch.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
